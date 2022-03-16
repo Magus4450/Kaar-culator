@@ -1,0 +1,70 @@
+import email
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
+from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
+from .forms import LoginForm, RegisterForm
+from .models import User
+
+def login_view(request):
+
+    if request.method == 'POST':
+        # Make a instance of login form with POST data
+        form = LoginForm(request.POST)
+
+        # Check if the form is valid
+        if form.is_valid():
+            # Check if username and password matches
+            user = authenticate(
+                email = form.cleaned_data['email'],
+                password = form.cleaned_data['password']
+            )
+
+            # If user exists with that username and password
+            if user:
+
+                # login the user
+                login(request, user)
+                # redirect to their profile
+                return redirect(reverse_lazy('accounts:profile'))
+            else:
+                print("Creds do not match")
+    
+    elif request.method == 'GET':
+        if request.user.is_authenticated:
+            return redirect(reverse_lazy('accounts:profile'))
+
+        form = LoginForm()
+
+    return render(request, 'templates/login.html', {'form': form})
+
+
+
+def register_view(request):
+    if request.method == "POST":
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            user = User(
+                email = form.cleaned_data['email'],
+                first_name = form.cleaned_data['first_name'],
+                last_name = form.cleaned_data['last_name'],
+                password = form.cleaned_data['password'],                
+            )
+            # To encrypt the password
+            user.set_password(form.cleaned_data['password'])
+            user.save()
+            return redirect(reverse_lazy('accounts:login'))
+    elif request.method == "GET":
+        form = RegisterForm()
+
+    return render(request, 'templates/register.html', {'form': form})
+
+@login_required(login_url=reverse_lazy('accounts:login'))
+def profile_view(request):
+    user = request.user
+
+    return render(request, 'templates/account.html', {'user': user})
+
+def logout_view(request):
+    logout(request)
+    return redirect(reverse_lazy('account:login'))

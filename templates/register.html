@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <!-- <input type="text" name="email" placeholder="Email" autocomplete="off">
+        <input type="text" name="first_name" placeholder="First Name" autocomplete="off">
+        <input type="text" name="last_name" placeholder="Last Name" autocomplete="off">
+        <input type="password" name="password" placeholder="Password">
+        <input type="password" name="password_confirmation" placeholder="Password confirmation"> -->
+        {{ form.as_p }}
+        <button type="submit">REGISTER</button>
+    </form>
+</body>
+</html>

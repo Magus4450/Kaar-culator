@@ -1,0 +1,23 @@
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <!-- <input type="text" name="email" placeholder="Email" autocomplete="off">
+        <input type="password" name="password" placeholder="Password"> -->
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">LOGIN</button>
+    </form>
+    <a href="{% provider_login_url 'google' %}">Google</a>
+    <a href="/accounts/register">Register</a>
+</body>
+</html>
