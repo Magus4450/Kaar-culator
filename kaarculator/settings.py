@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # Custom apps
 
     'accounts',
+    'home',
 ]
 
 
@@ -160,3 +161,25 @@ SOCIALACCOUNT_PROVIDERS = {
         },
     }
 }
+
+# To tell allauth that I have custom signup form
+
+ACCOUNT_FORMS = {
+    'signup' : 'accounts.forms.RegisterForm',
+    'login' : 'accounts.forms.LoginForm'
+    }
+
+# Tell allauth to use email as the primary login
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_USER_MODEL_USERNAME_FIELD = False
+ACCOUNT_USER_USERNAME_FIELD = None
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 7
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_UNIQUE_EMAIL = True
+
+

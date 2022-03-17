@@ -7,4 +7,5 @@ urlpatterns = [
 
     path('accounts/', include('accounts.urls', namespace='account')),
     path('accounts/', include('allauth.urls')),
+    path('', include('home.urls', namespace='home')),
 ]
