@@ -1,6 +1,6 @@
 {% load socialaccount %}
-
-<!DOCTYPE html>
+{% load static %}
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,8 +10,6 @@
 </head>
 <body>
     <form action="" method="POST">
-        <!-- <input type="text" name="email" placeholder="Email" autocomplete="off">
-        <input type="password" name="password" placeholder="Password"> -->
         {% csrf_token %}
         {{ form.as_p }}
 
@@ -19,5 +17,62 @@
     </form>
     <a href="{% provider_login_url 'google' %}">Google</a>
     <a href="/accounts/register">Register</a>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    
+</head>
+<body>
+    <section>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="box">
+            
+            <div class="container">
+                <div class="container2">
+                    
+                    <img src="{% static 'images/calcu.png' %}"style="width: 480px;00px;height: 315px;px;">
+                    <div class="Name">कर Calculator</div>
+                </div>
+                <div class="form">
+                    <h2>Login</h2>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <!-- {{ form.as_p }} -->
+                        {% for field in form %}
+                            <div class="inputBox">
+                                {{ field.errors }}
+                                {{ field.label_tag }} {{ field }}
+                                {% if field.help_text %}
+                                <p class="help">{{ field.help_text|safe }}</p>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                        <a href="{% provider_login_url 'google' %}"> Continue with Google</a>
+                
+                        <p class="forget"> <a href="#">Forgot Password?</a></p>
+                        <div class="inputBox">
+                            <input type="submit" value="Login">
+                        </div>
+                        <p class="create"><a href="{% url 'accounts:register' %}">Don't have an account? </a></p>
+                        
+                    </form>
+
+                </div>
+            </div>
+
+
+            </div>
+    </section>
 </body>
 </html>
