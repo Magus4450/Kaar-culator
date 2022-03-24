@@ -8,6 +8,13 @@
 </head>
 <body>
     {% if user.is_authenticated %}
+        
+        {% if user.is_superuser %}
+            <p>Admin</p>
+        {% else  %}
+            <p>User</p>
+        {% endif  %}
+        
         <p> Welcome, {{ user.first_name }} {{ user.last_name }}</p>
         <a href="{% url 'accounts:logout' %}">Logout</a>
     {% else %}

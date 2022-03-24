@@ -46,6 +46,9 @@ class User(AbstractUser):
     user_permissions = None
 
 
+    def __str__(self):
+        return self.first_name + ' ' + self.last_name
+
 class UserInfo(models.Model):
 
     # Extra fields
