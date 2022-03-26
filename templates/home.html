@@ -7,6 +7,7 @@
     <title>Home</title>
 </head>
 <body>
+    <a href="{% url 'news:add_category'%}">Add Category</a>
     {% if user.is_authenticated %}
         
         {% if user.is_superuser %}

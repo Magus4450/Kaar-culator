@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ news.title }}</title>
+</head>
+<body>
+    <h1>{{ news.title }}</h1>
+    <small> By: {{ news.author.first_name }} {{news.author.last_name }} -- {{ news.post_date }}</small> 
+    {% if user.is_authenticated %}
+        {% if user.id == news.author.id %}
+            <a href="{% url 'news:update' news.pk%}"> (Edit) </a>
+            <a href="{% url 'news:delete' news.pk%}"> (Delete) </a>
+        {% endif %}
+    {% endif %}
+    
+    
+    <br/>
+    <hr><br/>
+    {{ news.body }}
+    <a href="{% url 'news:list' %}">Back to list</a>
+</body>
+</html>
