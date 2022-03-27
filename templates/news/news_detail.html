@@ -21,5 +21,26 @@
     <hr><br/>
     {{ news.body }}
     <a href="{% url 'news:list' %}">Back to list</a>
+
+    <br><br>
+
+    <hr>
+
+    <form action ="{% url 'news:like_post' news.pk %}" method="POST">
+        {% csrf_token %}
+
+        {% if user.is_authenticated%}
+            {% if liked %}
+                <button type="submit" name="post_id" value = {{news.id}}>Unlike</button> - {{ total_likes}}Likes
+            {% else %}
+                <button type="submit" name="post_id" value = {{news.id}}>Like</button> - {{ total_likes}}Likes
+            {% endif %}
+        {% else %}
+            Login to Like
+            {{ total_likes}}Likes
+        {% endif %}
+        
+        
+    </form>
 </body>
 </html>

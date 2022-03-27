@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import NewsListView, NewsDetailView, AddNewsView, UpdateNewsView, DeleteNewsView, AddCategoryView, CategoryView
+from .views import NewsListView, NewsDetailView, AddNewsView, UpdateNewsView, DeleteNewsView, AddCategoryView, CategoryView, LikeView
 app_name='news'
 
 
@@ -11,6 +11,7 @@ urlpatterns = [
     path('update/<int:pk>/', UpdateNewsView.as_view(), name="update"),
     path('delete/<int:pk>/', DeleteNewsView.as_view(), name="delete"),
     path('category/<str:cats>/', CategoryView, name="category"),
+    path('like/<int:pk>', LikeView, name='like_post'),
     
 ]
 

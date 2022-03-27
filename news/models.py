@@ -27,9 +27,14 @@ class NewsModel(models.Model):
     post_date = models.DateField(auto_now_add=True)
     category = models.CharField(max_length=100, default='General')
 
+    likes = models.ManyToManyField(User, related_name='news_posts', blank=True)
+
+    def total_likes(self):
+        return self.likes.count()
+
     def __str__(self):
         return self.title + '-' + str(self.author)
 
     def get_absolute_url(self):
-        return reverse('news:detail', args=(str(self.id)))
+        return reverse('news:list')
 
