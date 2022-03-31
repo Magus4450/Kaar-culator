@@ -19,7 +19,7 @@
     
     <br/>
     <hr><br/>
-    {{ news.body }}
+    {{ news.body|safe}}
     <a href="{% url 'news:list' %}">Back to list</a>
 
     <br><br>

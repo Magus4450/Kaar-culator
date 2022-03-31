@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account</title>
 </head>
-<body>
+<body>  
+    {% comment %} Link to News Page {% endcomment %}
+    <a href="{% url 'news:list' %}">News</a>
     <p>Welcome {{ user.first_name }} {{ user.last_name }}</p>
     <a href="{% url 'account:logout' %}">LOGOUT</a>
 </body>

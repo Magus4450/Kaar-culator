@@ -20,6 +20,7 @@ class NewsListView(ListView):
         cat_list = Category.objects.all()
         context = super(NewsListView, self).get_context_data(*args, **kwargs)
         context["cat_list"] = cat_list
+        
         return context
 
 
@@ -68,6 +69,8 @@ class UpdateNewsView(UpdateView):
     model = NewsModel
     form_class = UpdateForm
     template_name = 'templates/news/update_news.html'
+    context_object_name = 'news'
+
 
 class DeleteNewsView(DeleteView):
     context_object_name = 'news'

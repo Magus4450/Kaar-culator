@@ -10,6 +10,7 @@
     <h2> Add News </h2>
     <form method="POST">
         {%  csrf_token %}
+        {{ form.media }}
         {{ form.as_p }}
         <button>Post</button>
     </form>

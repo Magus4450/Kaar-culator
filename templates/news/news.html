@@ -7,6 +7,7 @@
     <title>News</title>
 </head>
 <body>
+    <a href = {% url 'home:home' %}>Home</a>
     <h1>Post</h1>
     <h2>Categories</h2>
     <ul>
@@ -30,7 +31,8 @@
                 {% endif %}
                 
                 <br/>
-            {{ news.body }}
+            {{ news.body|safe  }}
+            <hr><br/>
         {% endfor %}
     </ul>
 </body>

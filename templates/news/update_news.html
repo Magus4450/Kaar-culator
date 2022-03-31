@@ -1,4 +1,4 @@
-
+{{ user.id }} == {{ news.author.id }}
 {% if user.is_authenticated %}
     {% if user.id == news.author.id %}
         <h1> Update News </h1>
@@ -8,6 +8,7 @@
 
         <form method="POST">
             {% csrf_token %}
+            {{ form.media }}
             {{ form.as_p }}
             <button>Update</button>
         </form>
