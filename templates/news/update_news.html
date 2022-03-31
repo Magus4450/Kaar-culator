@@ -1,0 +1,18 @@
+{{ user.id }} == {{ news.author.id }}
+{% if user.is_authenticated %}
+    {% if user.id == news.author.id %}
+        <h1> Update News </h1>
+
+
+        <br/><br/>
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form.as_p }}
+            <button>Update</button>
+        </form>
+    {% else %}
+        <h1> You are not the author of this news </h1>
+    {% endif %}
+{% endif %}

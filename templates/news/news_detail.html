@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ news.title }}</title>
+</head>
+<body>
+    <h1>{{ news.title }}</h1>
+    <small> By: {{ news.author.first_name }} {{news.author.last_name }} -- {{ news.post_date }}</small> 
+    {% if user.is_authenticated %}
+        {% if user.id == news.author.id %}
+            <a href="{% url 'news:update' news.pk%}"> (Edit) </a>
+            <a href="{% url 'news:delete' news.pk%}"> (Delete) </a>
+        {% endif %}
+    {% endif %}
+    
+    
+    <br/>
+    <hr><br/>
+    {{ news.body|safe}}
+    <a href="{% url 'news:list' %}">Back to list</a>
+
+    <br><br>
+
+    <hr>
+
+    <form action ="{% url 'news:like_post' news.pk %}" method="POST">
+        {% csrf_token %}
+
+        {% if user.is_authenticated%}
+            {% if liked %}
+                <button type="submit" name="post_id" value = {{news.id}}>Unlike</button> - {{ total_likes}}Likes
+            {% else %}
+                <button type="submit" name="post_id" value = {{news.id}}>Like</button> - {{ total_likes}}Likes
+            {% endif %}
+        {% else %}
+            Login to Like
+            {{ total_likes}}Likes
+        {% endif %}
+        
+        
+    </form>
+</body>
+</html>

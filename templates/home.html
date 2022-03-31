@@ -7,7 +7,9 @@
     <title>Home</title>
 </head>
 <body>
+    
     {% if user.is_authenticated %}
+        <a href="{% url 'news:list' %}">News</a>
         
         {% if user.is_superuser %}
             <p>Admin</p>
