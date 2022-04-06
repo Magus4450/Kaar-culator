@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+</head>
+<body>
+    <a href = {% url 'home:home' %}>Home</a>
+    <h1>Post</h1>
+    <h2>Categories</h2>
+    <ul>
+        {% for cat in cat_list %}
+            <li><a href="{% url 'news:category' cat.name|slugify%}">{{ cat.name }}</a></li>
+        {% endfor %}
+        
+    </ul>
+    <a href="{% url 'news:add_category'%}">Add Category</a>
+    <a href="{% url 'news:add' %}">Add</a>
+    <ul>
+        {% for news in news_list %}
+            <li><a href="{% url 'news:detail' news.pk%}"> {{ news.title }}</a>  - <a href="{% url 'news:category' news.category|slugify %}">{{news.category}}</a> - {{ news.author }} -{{ news.post_date }} 
+
+                {% if user.is_authenticated %}
+                    {% if user.id == news.author.id %}
+                        <a href="{% url 'news:update' news.pk%}"> (Edit) </a>
+                        <a href="{% url 'news:delete' news.pk%}"> (Delete) </a>
+                        <br/>
+                    {% endif %}
+                {% endif %}
+                
+                <br/>
+            {{ news.body|safe  }}
+            <hr><br/>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+</head>
+<body>
+
+    {% if category_posts%}
+        <h1> {{ cats }} Category </h1>
+        <ul>
+            {% for news in category_posts %}
+                <li><a href="{% url 'news:detail' news.pk%}">{{ news.title }} - {{ news.author }}</a> 
+                    <a href="{% url 'news:update' news.pk%}"> (Edit) </a>
+                    <a href="{% url 'news:delete' news.pk%}"> (Delete) </a>
+                    <br/>
+                    {{ news.post_date }}
+                    <br/>
+                {{ news.body }}
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h2>Page doesnt exist</h2>
+    {% endif %}
+</body>
+</html>

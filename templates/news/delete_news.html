@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+</head>
+<body>
+
+    {% if user.is_authenticated %}
+        {% if user.id == news.author.id %}
+            <h3> Delete: {{ news.title }} </h3>
+
+            <form method = "POST">
+                {% csrf_token %}
+                <button>Delete</button>
+            </form>
+        {% else %}
+            <h3> You are not the author of this news </h3>
+        
+        {% endif %}
+    {% endif %}
+</body>
+</html>

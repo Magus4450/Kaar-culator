@@ -36,7 +36,7 @@ def login_view(request):
 
         form = LoginForm()
 
-    return render(request, 'templates/login.html', {'form': form})
+    return render(request, 'templates/accounts/login.html', {'form': form})
 
 
 
@@ -57,13 +57,13 @@ def register_view(request):
     elif request.method == "GET":
         form = RegisterForm()
 
-    return render(request, 'templates/register.html', {'form': form})
+    return render(request, 'templates/accounts/register.html', {'form': form})
 
 @login_required(login_url=reverse_lazy('accounts:login'))
 def profile_view(request):
     user = request.user
 
-    return render(request, 'templates/account.html', {'user': user})
+    return render(request, 'templates/accounts/account.html', {'user': user})
 
 def logout_view(request):
     logout(request)
