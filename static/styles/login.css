@@ -142,12 +142,12 @@ section .color:nth-child(3)
 }
 
 
-.form .inputBox
+.form p
 {
     width: 90%;
     margin-top: 30px;
 }
-.form .inputBox input
+.form p input
 {
     width: 100%;
     background: rgba(255,255,255,0.2);
@@ -164,11 +164,11 @@ section .color:nth-child(3)
     color: rgb(5, 5, 5);
     
 }
-.form .inputBox input::placeholder
+.form p input::placeholder
 {
     color: rgb(7, 7, 7);
 }
-.form .inputBox input[type="submit"]
+.form p input[type="submit"]
 {
    
   display: inline-block; 

@@ -40,9 +40,9 @@
                         </div> 
                         
                         <div class="inputBox">
-                            <input  id="login" type="submit" value="Sign Up" onclick:"validate()">
+                            <input  id="login" type="submit" value="Sign Up">
                         </div>
-                        <p class="forget"> <a href="index.html">Already have account</a></p>
+                        <p class="forget"> <a href="{% url 'accounts:login' %}">Already have account</a></p>
                         <div class="inputBox">
                             
                             <button class="google">
