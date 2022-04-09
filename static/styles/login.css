@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,300;1,700&display=swap');
+
+* {
+
+margin: 0;
+padding: 0;
+
+
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #ffffff, #ffffff);
+
+}
+section .color
+{
+    position: absolute;
+    filter: blur(150px);
+}
+section .color:nth-child(1)
+{
+    top: -350px;
+    width: 600px;
+    height: 600px;
+    background: #249245;
+
+}
+section .color:nth-child(2)
+{
+    bottom: -150px;
+    left: 100px;
+    width: 500px;
+    height: 500px;
+    background: #33b478;
+    
+}
+section .color:nth-child(3)
+{
+    top: 50px;
+    right: 100px;
+    width: 300px;
+    height: 300px;
+    background: #2ca17e;
+    
+}
+.box
+{
+    position: relative;
+
+}
+.box .square
+{
+    position: absolute;
+    backdrop-filter:blur(5px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    background:rgba(255,255,255,0.1);
+    border-radius: 10px;
+}
+
+.container
+{
+    position: relative;
+    width: 950px;
+    height: 530px;
+    background:rgba(240, 235, 235, 0.938);
+    border-radius: 10px;
+    display:flex;
+    justify-content:center;
+    align-items: right;
+    backdrop-filter:blur(5px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.container2
+{
+    text-align: center;
+    position: relative;
+    width: 800px;
+    height: 530px;
+    background:rgba(20, 18, 27, 0.897);
+    border-radius: 10px;
+    display:flex;
+    justify-content:center;
+    align-items: right;
+    backdrop-filter:blur(5px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+
+}
+.form
+{
+    position:relative;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+
+}
+.form p
+{
+    margin-top: 15px;
+}
+.form h2
+{
+    position: relative;
+    color: rgb(21, 4, 44);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    
+
+}
+.inputBox .google:hover
+{
+    background-color: #0b00d3;
+}
+.inputBox #login:hover
+{
+    background-color: #0b00d3;
+}
+.inputBox .google
+{
+    border-radius: 10px ;
+    display: inline-block;  
+    padding: 8px 20px;
+    background-color: black;
+    color: rgb(247, 243, 243);
+    border: none;
+    cursor: pointer;
+    width: 100%;
+     
+}
+
+
+.form p
+{
+    width: 90%;
+    margin-top: 30px;
+}
+.form p input
+{
+    width: 100%;
+    background: rgba(255,255,255,0.2);
+
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(19, 19, 19, 0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgb(5, 5, 5);
+    
+}
+.form p input::placeholder
+{
+    color: rgb(7, 7, 7);
+}
+.form p input[type="submit"]
+{
+   
+  display: inline-block; 
+  padding: 14px 20px;
+  margin: 8px 0;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  opacity: 0.9;  
+    
+}
+.forget
+{
+    margin-top: 50px;
+    margin-bottom: -15px;
+    color: rgb(12, 12, 12);
+   
+    
+
+}
+
+.forget a
+{
+    color: rgb(12, 11, 11);
+    font-weight: 600;
+    
+    
+}
+.create a
+{
+    color: rgb(12, 11, 11);
+    font-weight: 600;
+    
+}
+.Name {
+    position: absolute;
+    top: 60px;
+    left: 135px;
+    font-size: 40px;
+    color: #ffffff;
+    font-style:italic;
+}
+.container
+{
+    background-color: rgb(207, 203, 203);
+}
+.container2 img
+{
+
+    position: relative;
+    margin-top: 150px;
+}
+
+
