@@ -6,19 +6,31 @@ User = get_user_model()
 
 class LoginForm(forms.Form):
 
-    email = forms.CharField(max_length=150, widget=forms.TextInput(attrs={
+    email = forms.CharField(max_length=150, label='', widget=forms.TextInput(attrs={
         'placeholder': 'Email',
         }))
-    password = forms.CharField(max_length=150, widget=forms.PasswordInput())
+    password = forms.CharField(max_length=150, label='',  widget=forms.PasswordInput(attrs={
+        'placeholder': 'Password',
+        }))
 
 class RegisterForm(forms.Form):
-    first_name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={
+    first_name = forms.CharField(max_length=50, label='',  widget=forms.TextInput(attrs={
         'placeholder': 'First Name',
         }))
-    last_name = forms.CharField(max_length=50)
-    email = forms.CharField(max_length=100)
-    password = forms.CharField(max_length=150, widget=forms.PasswordInput())
-    confirm_password = forms.CharField(max_length=150, widget=forms.PasswordInput())
+    last_name = forms.CharField(max_length=50, label='',  widget=forms.TextInput(attrs={
+        'placeholder': 'Last Name',
+        }))
+
+        
+    email = forms.EmailField(max_length=100, label='',  widget=forms.TextInput(attrs={
+        'placeholder': 'Email',
+        }))
+    password = forms.CharField(max_length=150, label='',  widget=forms.PasswordInput(attrs={
+        'placeholder': 'Password',
+        }))
+    confirm_password = forms.CharField(max_length=150, label='',  widget=forms.PasswordInput(attrs={
+        'placeholder': 'Confirm Password',
+        }))
 
 
     
