@@ -1,23 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add News</title>
-</head>
-<body>
-    <h2> Add News </h2>
-    <form method="POST">
-        {%  csrf_token %}
-        {{ form.media }}
-        {{ form.as_p }}
-        <button>Post</button>
-    </form>
 
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Add News
+{% endblock title %}
+
+{% block css%}
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'styles/magnific-popup.css' %}">
+     <link rel="stylesheet" href="{% static 'styles/font-awesome.min.css' %}">
+     <link rel="stylesheet" href="{% static 'styles/templatemo-style.css' %}">
+     <style>
+         #blog{
+            background: linear-gradient(to right, #434343, #000000);
+         }
+     </style>
+{% endblock css %}
+
+{% block content %}
+
+
+       <!-- BLOG -->
+     
+     <section id="blog" data-stellar-background-ratio="0.5">
+        <div class="container">
+             <div class="row">
+
+                  <div class="col-md-12 col-sm-12">
+                       <div class="section-title">
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                            <h2>Add News</h2>
+                            <span class="line-bar">...</span>
+                       </div>
+                  </div>
+   
+            </div>
+        </div>                    
+
+    </section>
+    <section id="work" data-stellar-background-ratio="0.5">
+        <div class="container">
+             <div class="row">
+                <div class="col-md-2 col-sm-6">
+                    <form method="POST">
+                        {%  csrf_token %}
+                        {{ form.media }}
+                        {{ form.as_p }}
+                        {% comment %} <button>Post</button> {% endcomment %}
+                        <div class="col-md-12 col-sm-12">
+                            <input type="submit" class="form-control" name="submit" value="Post">
+                       </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ {% endblock content %}
+
+     
+
+{% block js %}
     <script>
         var name = "{{ user.id }}";
         document.getElementById('elder').value = name;
     </script>
-</body>
-</html>
+     <script src="{% static 'js/jquery.js' %}"></script>
+     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+     <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+     <script src="{% static 'js/smoothscroll.js' %}"></script>
+     <script src="{% static 'js/custom.js' %}"></script>
+{% endblock js%}
