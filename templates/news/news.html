@@ -1,39 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News</title>
-</head>
-<body>
-    <a href = {% url 'home:home' %}>Home</a>
-    <h1>Post</h1>
-    <h2>Categories</h2>
-    <ul>
-        {% for cat in cat_list %}
-            <li><a href="{% url 'news:category' cat.name|slugify%}">{{ cat.name }}</a></li>
-        {% endfor %}
-        
-    </ul>
-    <a href="{% url 'news:add_category'%}">Add Category</a>
-    <a href="{% url 'news:add' %}">Add</a>
-    <ul>
-        {% for news in news_list %}
-            <li><a href="{% url 'news:detail' news.pk%}"> {{ news.title }}</a>  - <a href="{% url 'news:category' news.category|slugify %}">{{news.category}}</a> - {{ news.author }} -{{ news.post_date }} 
 
-                {% if user.is_authenticated %}
-                    {% if user.id == news.author.id %}
-                        <a href="{% url 'news:update' news.pk%}"> (Edit) </a>
-                        <a href="{% url 'news:delete' news.pk%}"> (Delete) </a>
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    News
+{% endblock title %}
+
+{% block css%}
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'styles/magnific-popup.css' %}">
+     <link rel="stylesheet" href="{% static 'styles/font-awesome.min.css' %}">
+     <link rel="stylesheet" href="{% static 'styles/templatemo-style.css' %}">
+     <style>
+         #blog{
+            background: linear-gradient(to right, #434343, #000000);
+         }
+     </style>
+{% endblock css %}
+
+{% block content %}
+
+
+       <!-- BLOG -->
+     
+     <section id="blog" data-stellar-background-ratio="0.5">
+        <div class="container">
+             <div class="row">
+   
+
+
+                  <div class="col-md-12 col-sm-12">
+                       <div class="section-title">
                         <br/>
-                    {% endif %}
-                {% endif %}
-                
-                <br/>
-            {{ news.body|safe  }}
-            <hr><br/>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+                        <br/>
+                        <br/>
+                        <br/>
+                            <h2>News</h2>
+                            <span class="line-bar">...</span>
+                       </div>
+                  </div>
+   
+                                             <!-- Add News-->
+   <section id="work" data-stellar-background-ratio="0.5">
+        <div class="container">
+             <div class="row">
+                     <div class="col-md-2 col-sm-6">
+                                 <select class="form-control" id="cf-budgets" name="cf-budgets" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+                                      <option value="">Select...</option>
+                                      {% for cat in cat_list %}
+                                          {% comment %} <li></li> {% endcomment %}
+                                          <option value="{% url 'news:category' cat.name|slugify%}">{{ cat.name }}</option>
+                                      {% endfor %}
+                                      <!-- <option>News Categories</option> -->
+                                      
+                                      {% comment %} <option>Political</option>
+                                      <option>Sports</option>
+                                      <option>Entertainment</option>
+                                      <option>Stock</option>
+                                      <option>Others.</option> {% endcomment %}
+                                 </select>
+
+                        </div>
+                         <div class="col-md-2 col-sm-12">
+                            <!-- <input type="submit" class="form-control" name="submit" value="Edit News"> -->
+                       </div>
+
+                       <div class="col-md-2 col-sm-12">
+                            <!-- <input type="submit" class="form-control" name="submit" value="Delete News"> -->
+                       </div>
+
+                        
+
+                        <div class="col-md-2 col-sm-12">
+                            <form action = "{% url 'news:add'%}">
+                            <input type="submit" class="form-control" name="submit" value="Add News">
+                            </form>
+                       </div>
+
+                       
+
+
+                       
+                        
+
+                  
+
+             </div>
+        </div>
+   </section>
+      {% for news in news_list %}
+
+          <div class="col-md-6 col-sm-6">
+              <!-- BLOG THUMB -->
+              <div class="media blog-thumb">
+                      <div class="media-body blog-info">
+                          <small><i class="fa fa-clock-o"></i> {{ news.post_date }}</small>
+                          <h5>{{ news.author }}</h5>
+                          <h4><a href="news-detail.html">{{ news.title }}</a></h4>
+                          <p>{{ news.body|safe|slice:"0:40"}}...</p>
+                          <a href="{% url 'news:detail' news.pk%}" class="btn section-btn">Read More</a>
+                          {% if user.is_authenticated %}
+                            {% if user.id == news.author.id %}
+                          <ul class="list-inline m-0">
+                              <li class="list-inline-item">
+                              <a href="{% url 'news:update' news.pk%}"><button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button></a>
+                              </li>
+                              <li class="list-inline-item">
+                              <a href="{% url 'news:delete' news.pk%}"><button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button></a>
+                              </li>
+                          </ul>
+                            {% endif %}
+                          {% endif %}
+                      </div>
+              </div>
+          </div>
+      {% endfor %}
+                  
+   </section>
+
+ {% endblock content %}
+
+     
+
+{% block js %}
+     <script src="{% static 'js/jquery.js' %}"></script>
+     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+     <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+     <script src="{% static 'js/smoothscroll.js' %}"></script>
+     <script src="{% static 'js/custom.js' %}"></script>
+{% endblock js%}
+

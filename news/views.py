@@ -26,7 +26,8 @@ class NewsListView(ListView):
 
 def CategoryView(request, cats):
     category_posts = NewsModel.objects.filter(category=cats.replace("-", ""))
-    return render(request, 'templates/news/categories.html', {'cats': cats.title().replace("-", " "), 'category_posts': category_posts})
+    cat_list = Category.objects.all()
+    return render(request, 'templates/news/categories.html', {'cats': cats.title().replace("-", " "), 'category_posts': category_posts, 'cat_list': cat_list})
 
 class NewsDetailView(DetailView):
     context_object_name = 'news'
