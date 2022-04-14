@@ -26,13 +26,13 @@ def login_view(request):
                 # login the user
                 login(request, user)
                 # redirect to their profile
-                return redirect(reverse_lazy('accounts:profile'))
+                return redirect(reverse_lazy('home:home'))
             else:
                 print("Creds do not match")
     
     elif request.method == 'GET':
         if request.user.is_authenticated:
-            return redirect(reverse_lazy('accounts:profile'))
+            return redirect(reverse_lazy('home:home'))
 
         form = LoginForm()
 
@@ -67,4 +67,4 @@ def profile_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect(reverse_lazy('account:login'))
+    return redirect(reverse_lazy('home:home'))
