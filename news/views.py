@@ -33,23 +33,16 @@ class NewsDetailView(DetailView):
     context_object_name = 'news'
     model = NewsModel
     template_name = 'templates/news/news_detail.html'
-
     def get_context_data(self, *args, **kwargs):
-
-
-
         context = super(NewsDetailView, self).get_context_data(*args, **kwargs)
-
         stuff = get_object_or_404(NewsModel, id=self.kwargs['pk'])
         total_likes = stuff.total_likes()
-
         liked = False
         if stuff.likes.filter(id=self.request.user.id).exists():
             liked = True
         context["total_likes"] = total_likes
         context["liked"] = liked
         return context
-
     
 
 class AddNewsView(CreateView):
@@ -57,13 +50,10 @@ class AddNewsView(CreateView):
     form_class = PostForm
     template_name = 'templates/news/add_news.html'
 
-
 class AddCategoryView(CreateView):
     model = Category
     template_name = 'templates/news/add_category.html'
     fields = '__all__'
-
-    
     
 
 class UpdateNewsView(UpdateView):

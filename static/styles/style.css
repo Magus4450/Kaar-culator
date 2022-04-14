@@ -122,7 +122,7 @@ section .color:nth-child(3)
     
 
 }
-.form h2::before;
+.form h2::before
 {
     content: '';
     position: absolute;
