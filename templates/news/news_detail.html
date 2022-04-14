@@ -1,3 +1,98 @@
+
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    {{news.title}}
+{% endblock title %}
+
+{% block css%}
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'styles/magnific-popup.css' %}">
+     <link rel="stylesheet" href="{% static 'styles/font-awesome.min.css' %}">
+     <link rel="stylesheet" href="{% static 'styles/templatemo-style.css' %}">
+     <style>
+         #blog{
+            background: linear-gradient(to right, #434343, #000000);
+         }
+
+         small, h5, .like {
+             color: white;
+             cursor: pointer;
+         }
+         .like button {
+             color: black;  
+         }
+         
+     </style>
+{% endblock css %}
+
+{% block content %}
+
+
+<section id="blog" data-stellar-background-ratio="0.5">
+<section id="blog-detail" data-stellar-background-ratio="0.5">
+    <div class="container">
+         <div class="row">
+
+              <div class="col-md-offset-1 col-md-10 col-sm-12">
+                   <!-- BLOG THUMB -->
+                   <div class="blog-detail-thumb">
+                     
+                        <h2>{{news.title}}</h2>
+                        <small><i class="fa fa-clock-o"></i> {{news.post_date}}</small>
+                             <h5>{{news.author.first_name}} {{news.author.last_name}}</h5>
+
+                        <div class="container">
+                            <p>
+                                {{ news.body|safe}}
+                            </p>
+                             {% comment %} <a class="like">
+                                 <i class="fa fa-thumbs-o-up"></i>  Like
+                                 <input class="qty1" name="qty1" readonly="readonly" type="text" value="0" />
+                             </a> {% endcomment %}
+
+
+                             <form action ="{% url 'news:like_post' news.pk %}" method="POST" class='like'>
+                                {% csrf_token %}
+                        
+                                {% if user.is_authenticated%}
+                                    {% if liked %}
+                                        <button type="submit" name="post_id" value = {{news.id}}><i class="fa fa-thumbs-o-down"></i>  Unlike</button> - {{ total_likes}}
+                                    {% else %}
+                                        <button type="submit" name="post_id" value = {{news.id}}><i class="fa fa-thumbs-o-up"></i>  Like</button> - {{ total_likes}}
+                                    {% endif %}
+                                {% else %}
+                                    Login to Like
+                                    {{ total_likes}}Likes
+                                {% endif %}
+                                
+                                
+                            </form>
+                            
+                         </div>
+                   </div>
+              </div>
+              
+         </div>
+    </div>
+</section>
+</section>
+
+ {% endblock content %}
+
+     
+
+{% block js %}} 
+     <script src="{% static 'js/jquery.js' %}"></script>
+     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+     <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+     <script src="{% static 'js/smoothscroll.js' %}"></script>
+     <script src="{% static 'js/custom.js' %}"></script>
+{% endblock js%}
+
+{% comment %} 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,4 +138,4 @@
         
     </form>
 </body>
-</html>
+</html> {% endcomment %}

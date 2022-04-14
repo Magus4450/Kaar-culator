@@ -1,3 +1,4 @@
 password.py
 env
-*/_
+*/
+*/__pycache__/*

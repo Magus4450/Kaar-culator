@@ -37,17 +37,21 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractUser):
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ["first_name", "last_name"]
     USERNAME_FIELD = "email"
     username = models.CharField(('username'), max_length=30, blank=True)
     email = models.EmailField("Email", blank=False, null=False, unique=True)
+    first_name = models.CharField(("first name"), max_length=150, blank=False)
+    last_name = models.CharField(("last name"), max_length=150, blank=False)
     objects = UserManager()
     groups = None
     user_permissions = None
 
-
     def __str__(self):
         return self.first_name + ' ' + self.last_name
+
+
+
 
 class UserInfo(models.Model):
 
