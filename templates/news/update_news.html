@@ -1,4 +1,99 @@
-{{ user.id }} == {{ news.author.id }}
+
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Update News
+{% endblock title %}
+
+{% block css%}
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'styles/magnific-popup.css' %}">
+     <link rel="stylesheet" href="{% static 'styles/font-awesome.min.css' %}">
+     <link rel="stylesheet" href="{% static 'styles/templatemo-style.css' %}">
+     <style>
+         #blog{
+            background: linear-gradient(to right, #434343, #000000);
+         }
+     </style>
+{% endblock css %}
+
+{% block content %}
+
+
+       <!-- BLOG -->
+     
+     <section id="blog" data-stellar-background-ratio="0.5">
+        <div class="container">
+             <div class="row">
+
+                  <div class="col-md-12 col-sm-12">
+                       <div class="section-title">
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                            <h2>Update News</h2>
+                            <span class="line-bar">...</span>
+                       </div>
+                  </div>
+   
+            </div>
+        </div>                    
+
+    </section>
+    {% if user.is_authenticated %}
+        {% if user.id == news.author.id %}
+        <section  id ="update-blog" data-stellar-background-ratio="0.5" style="text-align:left !important;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-sm-10">
+                        <form method="POST">
+                            {%  csrf_token %}
+                            {{ form.media }}
+                            {{ form.as_p }}
+                            {% comment %} {% for field in form %}
+                                <div class="form-group">
+                                    {{ field.errors }}
+                                    {{ field.label_tag }} {{ field }}
+                                    {% if field.help_text %}
+                                    <p class="help">{{ field.help_text|safe }}</p>
+                                    {% endif %}
+                                </div>
+                            {% endfor %} {% endcomment %}
+                            {% comment %} <button>Post</button> {% endcomment %}
+                            <div class="col-md-2 col-sm-4" style="padding:10px 0px 0px 0px;">
+                                <input type="submit" class="form-control" name="submit" value="Update">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endif %}
+    {% endif %}
+    
+
+ {% endblock content %}
+
+     
+
+{% block js %}
+    <script>
+        var name = "{{ user.id }}";
+        document.getElementById('elder').value = name;
+    </script>
+     <script src="{% static 'js/jquery.js' %}"></script>
+     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+     <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+     <script src="{% static 'js/smoothscroll.js' %}"></script>
+     <script src="{% static 'js/custom.js' %}"></script>
+{% endblock js%}
+
+
+
+{% comment %} {{ user.id }} == {{ news.author.id }}
 {% if user.is_authenticated %}
     {% if user.id == news.author.id %}
         <h1> Update News </h1>
@@ -15,4 +110,4 @@
     {% else %}
         <h1> You are not the author of this news </h1>
     {% endif %}
-{% endif %}
+{% endif %} {% endcomment %}

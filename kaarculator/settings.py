@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'accounts',
     'home',
     'news',
+    'tax',
 ]
 
 
@@ -191,4 +192,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
+
+
+# Redirect after google login
+
+# ACCOUNT_ADAPTER = 'project.accounts.allauth.AccountAdapter'
 

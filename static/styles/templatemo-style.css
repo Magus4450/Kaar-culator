@@ -49,7 +49,7 @@ http://www.templatemo.com/tm-509-hydro
   }
 
   p {
-    color: #757575;
+    color: #adadad;
     font-size: 14px;
     font-weight: normal;
     line-height: 25px;
@@ -59,6 +59,9 @@ http://www.templatemo.com/tm-509-hydro
     font-weight: 500;
   }
 
+  li {
+    color: #adadad;
+  }
 
   /*---------------------------------------
      GENERAL               
@@ -78,7 +81,7 @@ http://www.templatemo.com/tm-509-hydro
   }
 
   a {
-    color: #252525;
+    color: #e0e0e0;
     font-weight: normal;
     -webkit-transition: 0.5s;
     transition: 0.5s;
@@ -95,11 +98,15 @@ http://www.templatemo.com/tm-509-hydro
   }
 
   .section-title h2 {
+    color: #e9e9e9;
     margin-top: 0;
     margin-bottom: 10px;
     line-height: 0;
   }
-
+  .about-info .section-title h2 {
+    color: #020202;
+  }
+  
   .section-title .line-bar {
     color: #d9d9d9;
     display: block;
@@ -130,10 +137,10 @@ http://www.templatemo.com/tm-509-hydro
   }
 
   .overlay {
-    background: #000000;
+    /* background: #000000; */
     background: -webkit-linear-gradient(to right, #434343, #000000);
     background: linear-gradient(to right, #434343, #000000); 
-    opacity: 0.7;
+    /* opacity: 0.7; */
     position: absolute;
     width: 100%;
     height: 100%;
@@ -319,8 +326,8 @@ http://www.templatemo.com/tm-509-hydro
   -----------------------------------------*/
 
   #home {
-    background: url('../images/home-bg.jpg') no-repeat center center;
-    background-size: cover;
+    /* background: url('../images/home-bg.jpg') no-repeat center center; */
+    /* background-size: cover; */
     vertical-align: middle;
     display: -webkit-box;
     display: -webkit-flex;
@@ -517,7 +524,7 @@ http://www.templatemo.com/tm-509-hydro
   }
 
   .blog-thumb {
-    background: #ffffff;
+    background: #f5f5f5;
     -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
     box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
@@ -558,6 +565,9 @@ http://www.templatemo.com/tm-509-hydro
     margin: 0;
     padding: 8px 0 6px 0;
     text-transform: capitalize;
+  }
+  .blog-info h4 a{
+    color: black;
   }
 
   .blog-info .section-btn {
@@ -1060,3 +1070,11 @@ http://www.templatemo.com/tm-509-hydro
     }
     
   }
+
+
+  .section-title p {
+    color: #3d3d3d;
+
+  }
+
+ 

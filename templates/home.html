@@ -79,7 +79,7 @@
 
                     <div class="col-md-12 col-sm-12">
                          <div class="section-title">
-                              <h2 style="color:white !important;">News</h2>
+                              <h2 style="color:black !important;">News</h2>
                               <span class="line-bar">...</span>
                          </div>
                     </div>
@@ -95,28 +95,12 @@
                                    <select class="form-control" id="cf-budgets" name="cf-budgets" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
                                         <option value="">Select...</option>
                                         {% for cat in cat_list %}
-                                            {% comment %} <li></li> {% endcomment %}
                                             <option value="{% url 'news:category' cat.name|slugify%}">{{ cat.name }}</option>
                                         {% endfor %}
-                                        <!-- <option>News Categories</option> -->
-                                        
-                                        {% comment %} <option>Political</option>
-                                        <option>Sports</option>
-                                        <option>Entertainment</option>
-                                        <option>Stock</option>
-                                        <option>Others.</option> {% endcomment %}
+
                                    </select>
 
                           </div>
-                           <div class="col-md-2 col-sm-12">
-                              <!-- <input type="submit" class="form-control" name="submit" value="Edit News"> -->
-                         </div>
-
-                         <div class="col-md-2 col-sm-12">
-                              <!-- <input type="submit" class="form-control" name="submit" value="Delete News"> -->
-                         </div>
-
-                          
 
                           <div class="col-md-2 col-sm-12">
                               <form action = "{% url 'news:add'%}">
@@ -143,8 +127,8 @@
                         <div class="media-body blog-info">
                             <small><i class="fa fa-clock-o"></i> {{ news.post_date }}</small>
                             <h5>{{ news.author }}</h5>
-                            <h4><a href="{% url 'news:detail' news.pk%}">{{ news.title}}</a></h4>
-                            <p>{{ news.body|safe|slice:"0:40"}}...</p>
+                            <h4><a href="{% url 'news:detail' news.pk%}">{{ news.title|slice:"0:50"}} . . .</a></h4>
+                            <p>{{ news.body|safe|slice:"0:70"}} . . .</p>
                             <a href="{% url 'news:detail' news.pk%}" class="btn section-btn">Read More</a>
                             {% if user.is_authenticated %}
                               {% if user.id == news.author.id %}

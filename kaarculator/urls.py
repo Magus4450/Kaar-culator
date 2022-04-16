@@ -9,4 +9,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', include('home.urls', namespace='home')),
     path('news/', include('news.urls', namespace='news')),
+    path('tax/', include('tax.urls', namespace='tax')),
 ]

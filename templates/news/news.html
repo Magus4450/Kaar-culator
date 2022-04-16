@@ -76,11 +76,11 @@
               <!-- BLOG THUMB -->
               <div class="media blog-thumb">
                       <div class="media-body blog-info">
-                          <small><i class="fa fa-clock-o"></i> {{ news.post_date }}</small>
-                          <h5>{{ news.author }}</h5>
-                          <h4><a href="news-detail.html">{{ news.title }}</a></h4>
-                          <p>{{ news.body|safe|slice:"0:80"}}...</p>
-                          <a href="{% url 'news:detail' news.pk%}" class="btn section-btn">Read More</a>
+                        <small><i class="fa fa-clock-o"></i> {{ news.post_date }}</small>
+                        <h5>{{ news.author }}</h5>
+                        <h4><a href="{% url 'news:detail' news.pk%}">{{ news.title|slice:"0:50"}} . . .</a></h4>
+                        <p>{{ news.body|safe|slice:"0:70"}} . . .</p>
+                        <a href="{% url 'news:detail' news.pk%}" class="btn section-btn">Read More</a>
                           {% if user.is_authenticated %}
                             {% if user.id == news.author.id %}
                           <ul class="list-inline m-0">
