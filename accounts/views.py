@@ -6,9 +6,9 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from .forms import LoginForm, RegisterForm
 from .models import User
+from verify_email.email_handler import send_verification_email
 
-
-
+from django.views.decorators.csrf import csrf_exempt
 
 def login_view(request):
 
@@ -18,6 +18,7 @@ def login_view(request):
 
         # Check if the form is valid
         if form.is_valid():
+            
             # Check if username and password matches
             user = authenticate(
                 email = form.cleaned_data['email'],
@@ -45,17 +46,18 @@ def login_view(request):
     return render(request, 'templates/accounts/login.html', {'form': form})
 
 
-
+@csrf_exempt
 def register_view(request):
     if request.method == "POST":
         form = RegisterForm(request.POST)
         if form.is_valid():
-            user = User(
-                email = form.cleaned_data['email'],
-                first_name = form.cleaned_data['first_name'],
-                last_name = form.cleaned_data['last_name'],
-                password = form.cleaned_data['password'],                
-            )
+            inactive_user = send_verification_email(request, form)
+            # user = User(
+            #     email = inactive_user.cleaned_data['email'],
+            #     first_name = inactive_user.cleaned_data['first_name'],
+            #     last_name = inactive_user.cleaned_data['last_name'],
+            #     password = inactive_user.cleaned_data['password'],                
+            # )
 
             # send_email(user)
             # return render(request, 'templates/email/confirm_template.html')
@@ -63,9 +65,9 @@ def register_view(request):
             
 
             # To encrypt the password
-            user.set_password(form.cleaned_data['password'])
-            user.save()
-            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+            # user.set_password(inactive_user.cleaned_data['password'])
+            # user.save()
+            # login(request, user, backend='django.contrib.auth.backends.ModelBackend')
             return redirect(reverse_lazy('home:home'))
     elif request.method == "GET":
         form = RegisterForm()

@@ -2,6 +2,7 @@
 
 from .password import password, email, email_password, app_password
 from pathlib import Path
+# from django.urls import reverse_lazy
 
 import os
 
@@ -39,7 +40,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
 
     'ckeditor',
-
+    "verify_email.apps.VerifyEmailConfig",
     # Custom apps
 
     'accounts',
@@ -198,3 +199,19 @@ STATICFILES_DIRS = [
 # Redirect after google login
 
 # ACCOUNT_ADAPTER = 'project.accounts.allauth.AccountAdapter'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = email
+EMAIL_HOST_PASSWORD = app_password
+
+DEFAULT_FROM_EMAIL = 'noreply<no_reply@domain.com>'
+
+# Redirect without going to success page
+VERIFICATION_SUCCESS_TEMPLATE = None
+
+
+LOGIN_URL = '/accounts/login/'

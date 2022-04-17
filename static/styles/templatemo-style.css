@@ -138,8 +138,10 @@ http://www.templatemo.com/tm-509-hydro
 
   .overlay {
     /* background: #000000; */
-    background: -webkit-linear-gradient(to right, #434343, #000000);
-    background: linear-gradient(to right, #434343, #000000); 
+    background: -webkit-linear-gradient(to right, #505050, #101010);
+    background: linear-gradient(to right, #505050, #101010); 
+
+
     /* opacity: 0.7; */
     position: absolute;
     width: 100%;
