@@ -1,10 +1,14 @@
 import email
+from re import M
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from .forms import LoginForm, RegisterForm
 from .models import User
+
+
+
 
 def login_view(request):
 
@@ -19,16 +23,18 @@ def login_view(request):
                 email = form.cleaned_data['email'],
                 password = form.cleaned_data['password']
             )
-
+            print(user)
             # If user exists with that username and password
             if user:
 
                 # login the user
-                login(request, user)
+                login(request, user,backend='django.contrib.auth.backends.ModelBackend')
                 # redirect to their profile
                 return redirect(reverse_lazy('home:home'))
             else:
                 print("Creds do not match")
+        else:
+            print("FORM INVALID")
     
     elif request.method == 'GET':
         if request.user.is_authenticated:
@@ -50,10 +56,17 @@ def register_view(request):
                 last_name = form.cleaned_data['last_name'],
                 password = form.cleaned_data['password'],                
             )
+
+            # send_email(user)
+            # return render(request, 'templates/email/confirm_template.html')
+
+            
+
             # To encrypt the password
             user.set_password(form.cleaned_data['password'])
             user.save()
-            return redirect(reverse_lazy('accounts:login'))
+            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+            return redirect(reverse_lazy('home:home'))
     elif request.method == "GET":
         form = RegisterForm()
 
@@ -68,3 +81,4 @@ def profile_view(request):
 def logout_view(request):
     logout(request)
     return redirect(reverse_lazy('home:home'))
+

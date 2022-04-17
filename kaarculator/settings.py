@@ -1,5 +1,6 @@
 
-from .password import password
+
+from .password import password, email, email_password, app_password
 from pathlib import Path
 
 import os
@@ -197,4 +198,3 @@ STATICFILES_DIRS = [
 # Redirect after google login
 
 # ACCOUNT_ADAPTER = 'project.accounts.allauth.AccountAdapter'
-

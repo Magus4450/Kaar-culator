@@ -51,23 +51,9 @@
                     <form method="POST">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        {% comment %} <div class="inputBox">
-                            <input type="text" placeholder="FullName">
-                        </div>
-                        <div class="inputBox">
-                            <input type="text" placeholder="Username">
-                        </div>
-                        <div class="inputBox">
-                            <input type="text" placeholder="Email">
-                        </div>
-                        <div class="inputBox">
-                            <input type="password" 
-                            placeholder="New Password">
-                        </div>  {% endcomment %}
                         
                         <P class="inputBox">
                             <button type="submit">REGISTER</button>
-                            {% comment %} <input  id="login" type="submit" value="Sign Up">    {% endcomment %}
                         </P>
                         <p class="forget"> <a href="{% url 'accounts:login' %}">Already have account</a></p>
                         <P class="inputBox">
