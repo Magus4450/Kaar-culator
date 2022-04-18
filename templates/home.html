@@ -18,7 +18,7 @@
      <section id="home" data-stellar-background-ratio="0.5">
           <div class="overlay"></div>
           <div class="container">
-               <div class="row">
+               <div class="row" style="display: flex; align-items:center;">
 
                     <div class="col-md-6 col-sm-12">
                          <div class="home-video">
@@ -29,8 +29,9 @@
                          </div>
                     </div>
 
-                    <div class="col-md-6 col-sm-12">
-                        
+                    <div class="col-md-6 col-sm-12" style="display: flex; flex-direction:column; align-items:center; padding: 50px;">
+                        <h2 style="text-align:center;">Calculate your income tax with a click of your finger</h2>
+                        <a href="{% url 'home:home'%}" class="btn section-btn" style="text-align:center;">Get Started</a>
                     </div>
                     
                </div>
@@ -60,7 +61,7 @@
 
                     <div class="col-md-4 col-sm-12">
                          <div class="about-image">
-                              <img src="{% static 'images/about.jpg' %}" class="img-responsive" alt="">
+                              <img src="{% static 'images/about.svg' %}" class="img-responsive" alt="">
                          </div>
                     </div>
                     
@@ -101,12 +102,13 @@
                                    </select>
 
                           </div>
-
+                         {% if user.is_authenticated %}
                           <div class="col-md-2 col-sm-12">
                               <form action = "{% url 'news:add'%}">
                               <input type="submit" class="form-control" name="submit" value="Add News">
                               </form>
                          </div>
+                         {% endif %}
 
                          
 

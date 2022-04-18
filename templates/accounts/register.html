@@ -52,18 +52,17 @@
                         {% csrf_token %}
                         {{ form.as_p }}
                         
-                        <P class="inputBox">
-                            <button type="submit">REGISTER</button>
-                        </P>
+                        <p>
+                            <input id="login" type="submit" value="Register">
+                        </p>
                         <p class="forget"> <a href="{% url 'accounts:login' %}">Already have account</a></p>
-                        <P class="inputBox">
+                        <div class="inputBox" style="margin-top:10px;">
                             
-                            <a class="google " href="{% provider_login_url 'google' %}">
+                            <a class="google" href="{% provider_login_url 'google' %}">
                                 
-                                <i class="fa fa-google" style="padding: 5px; color: rgb(255, 255, 255); margin: 0 5px;"></i> Login with Google
+                                <i class="fa fa-google"></i> Login with Google
                             </a>
-
-                        </P>
+                        </div>
                         
                     </form>
 

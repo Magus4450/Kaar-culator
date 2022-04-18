@@ -50,16 +50,6 @@
                         {%  csrf_token %}
                         {{ form.media }}
                         {{ form.as_p }}
-                        {% comment %} {% for field in form %}
-                            <div class="form-group">
-                                {{ field.errors }}
-                                {{ field.label_tag }} {{ field }}
-                                {% if field.help_text %}
-                                <p class="help">{{ field.help_text|safe }}</p>
-                                {% endif %}
-                            </div>
-                        {% endfor %} {% endcomment %}
-                        {% comment %} <button>Post</button> {% endcomment %}
                         <div class="col-md-2 col-sm-4" style="padding:10px 0px 0px 0px;">
                             <input type="submit" class="form-control" name="submit" value="Post">
                         </div>

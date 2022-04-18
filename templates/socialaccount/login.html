@@ -1,20 +1,39 @@
 
 {% load i18n %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
 
 {% block content %}
-<h1>GOOOOOOOOGLE</h1>
-{% if process == "connect" %}
-<h1>{% blocktrans with provider.name as provider %}Connect {{ provider }}{% endblocktrans %}</h1>
 
-<p>{% blocktrans with provider.name as provider %}You are about to connect a new third party account from {{ provider }}.{% endblocktrans %}</p>
-{% else %}
-<h1>{% blocktrans with provider.name as provider %}Sign In Via {{ provider }}{% endblocktrans %}</h1>
 
-<p>{% blocktrans with provider.name as provider %}You are about to sign in using a third party account from {{ provider }}.{% endblocktrans %}</p>
-{% endif %}
 
-<form method="post">
-  {% csrf_token %}
-  <button type="submit">{% trans "Continue" %}</button>
-</form>
+
+
+
+
+    <div class="container h-100">
+      <div class="row align-items-center h-100">
+          <div class="col-6 mx-auto">
+              <div class="card h-100 border-primary justify-content-center">
+                  <div>
+                    {% if process == "connect" %}
+                    <h1>{% blocktrans with provider.name as provider %}Connect {{ provider }}{% endblocktrans %}</h1>
+
+                    <p>{% blocktrans with provider.name as provider %}You are about to connect a new third party account from {{ provider }}.{% endblocktrans %}</p>
+                    {% else %}
+                    <h1>{% blocktrans with provider.name as provider %}Sign In Via {{ provider }}{% endblocktrans %}</h1>
+
+                    <p>{% blocktrans with provider.name as provider %}You are about to sign in using a third party account from {{ provider }}.{% endblocktrans %}</p>
+                    {% endif %}
+
+                    <form method="post">
+                      {% csrf_token %}
+                      <button type="submit">{% trans "Continue" %}</button>
+                    </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
 {% endblock %}
