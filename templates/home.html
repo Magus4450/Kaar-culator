@@ -92,7 +92,7 @@
                     <div class="col-md-2 col-sm-12">
                          <!-- <input type="submit" class="form-control" name="submit" value="Add News"> -->
                     </div>
-                       <div class="col-md-2 col-sm-6">
+                         {% comment %} <div class="col-md-2 col-sm-6">
                                    <select class="form-control" id="cf-budgets" name="cf-budgets" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
                                         <option value="">Select...</option>
                                         {% for cat in cat_list %}
@@ -101,7 +101,7 @@
 
                                    </select>
 
-                          </div>
+                          </div> {% endcomment %}
                          {% if user.is_authenticated %}
                           <div class="col-md-2 col-sm-12">
                               <form action = "{% url 'news:add'%}">
