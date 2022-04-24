@@ -49,15 +49,19 @@
                          <li><a href="{% url 'home:home'%}" >Home</a></li>
                          <li><a href="#about" class="smoothScroll">About</a></li>
                          <li><a href="{% url 'news:list' %}">News</a></li>
-                         <li><a href="#work" class="smoothScroll">Tax</a></li>
+                         <li><a href="{% url 'tax:tax' %}">Tax</a></li>
+                         {% if user.is_authenticated %}
+                            <li><a href="{% url 'accounts:account' %}">Account</a></li>
+                            {% comment %} <li><a href="{% url 'accounts:logout' %}">Logout</a></li> {% endcomment %}
+                            
+
+                        {% endif %}
                          {% comment %} <li><a href="{#contact}" class="smoothScroll">Contacts</a></li> {% endcomment %}
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
                         {% if user.is_authenticated %}
-                            <li class="navbar-brand">Welcome, {{user.first_name}}</li>
-                            {% comment %} <li><a href="{% url 'accounts:logout' %}">Logout</a></li> {% endcomment %}
-                            <li class="section-btn"><a href="{% url 'accounts:logout' %}">Logout</a></li>
+                        <li class="section-btn"><a href="{% url 'accounts:logout' %}">Logout</a></li>
 
                         {% else %}
                             <li class="section-btn"><a href="{% url 'accounts:login' %}">Sign in / Register</a></li>
