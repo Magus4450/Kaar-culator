@@ -178,7 +178,7 @@ ACCOUNT_FORMS = {
 
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_USER_MODEL_USERNAME_FIELD = False
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_USER_USERNAME_FIELD = None
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
@@ -198,7 +198,7 @@ STATICFILES_DIRS = [
 
 # Redirect after google login
 
-# ACCOUNT_ADAPTER = 'project.accounts.allauth.AccountAdapter'
+
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

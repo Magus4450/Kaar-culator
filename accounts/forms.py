@@ -26,58 +26,6 @@ class LoginForm(forms.Form):
 
 class RegisterForm(forms.Form):
 
-    # class Meta:
-    #     model = User
-    #     fields = ['first_name', 'last_name',
-    #               'email', 'password', 'confirm_password']
-
-    #     widgets = {
-    #         'first_name': forms.CharField(
-    #             max_length=50, label='',  widget=forms.TextInput(attrs={
-    #                 'placeholder': 'First Name',
-    #             }
-    #             )
-    #         ),
-    #         'last_name': forms.CharField(
-    #             max_length=50, label='',  widget=forms.TextInput(attrs={
-    #                 'placeholder': 'Last Name',
-    #             }
-    #             )
-    #         ),
-
-    #         'email': forms.EmailField(
-    #             max_length=100, label='',  widget=forms.TextInput(attrs={
-    #                 'placeholder': 'Email',
-    #             }
-    #             )
-    #         ),
-    #         'password': forms.CharField(
-    #             max_length=150, label='',  widget=forms.PasswordInput(attrs={
-    #                 'placeholder': 'Password',
-    #             })),
-    #         'confirm_password': forms.CharField(
-    #             max_length=150, label='',  widget=forms.PasswordInput(attrs={
-    #                 'placeholder': 'Confirm Password',
-    #             })),
-    #         # 'citizen_investment_trust': forms.NumberInput(
-    #         #     attrs={
-    #         #         'class': 'form-control',
-    #         #     }
-    #         # ),
-    #         # 'bonus': forms.NumberInput(
-    #         #     attrs={
-    #         #         'class': 'form-control',
-    #         #     }
-    #         # ),
-    #         # 'insurance': forms.NumberInput(
-    #         #     attrs={
-    #         #         'class': 'form-control',
-    #         #     }
-    #         # ),
-
-
-
-    #     }
     first_name = forms.CharField(max_length=50, label='',  widget=forms.TextInput(attrs={
         'placeholder': 'First Name',
     }))

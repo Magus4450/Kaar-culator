@@ -1,0 +1,65 @@
+{% extends 'base.html' %}{% load static %}
+{% block title %}
+    Tax
+{% endblock title %}
+
+{% block css%}
+    <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'styles/magnific-popup.css' %}">
+     <link rel="stylesheet" href="{% static 'styles/font-awesome.min.css' %}">
+     <link rel="stylesheet" href="{% static 'styles/templatemo-style.css' %}">
+     <style>
+        #blog{
+           background: linear-gradient(to right, #505050, #101010);
+        }
+    </style>
+{% endblock css %}
+{% block content%}
+<section id="blog" data-stellar-background-ratio="0.5">
+    <div class="container">
+         <div class="row">
+
+
+
+            <div class="col-md-12 col-sm-12">
+                <div class="section-title">
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                    <h2>Tax Detail</h2>
+                    <span class="line-bar">...</span>
+            </div>
+        </div>
+    </div>
+</section>
+<div>
+    <p> Province : {{tax.province}}</p>
+    <p> District : {{tax.district}}</p>
+    <p> Local : {{tax.local}}</p>
+    <p> Employee Nature : {{tax.employee_nature}}</p>
+    <p> Fiscal Year : {{tax.fiscal_year}}</p>
+    <p> Monthly Salary : {{tax.monthly_salary}}</p>
+    <p> Employee Provident Fund : {{tax.employee_provident_fund}}</p>
+    <p> Months : {{tax.months}}</p>
+    <p> Citizen Investment Trust : {{tax.citizen_investment_trust}}</p>
+    <p> Bonus : {{tax.bonus}}</p>
+    <p> Insurance : {{tax.insurance}}</p>
+    <p> Taxable Amount : {{tax.final_tax}}</p>
+    
+
+</div>
+
+
+
+</form>
+{% endblock %}
+{% block js %}
+     <script src="{% static 'js/data_import.js' %}"></script>
+     <script src="{% static 'js/jquery.js' %}"></script>
+     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+     <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+     <script src="{% static 'js/smoothscroll.js' %}"></script>
+     <script src="{% static 'js/custom.js' %}"></script>
+{% endblock js%}
