@@ -54,16 +54,16 @@
 
                         <P class="inputBox">
                             <button type="submit">REGISTER</button>
-                        </P>
-                        <p class="forget"> <a href="{% url 'accounts:login' %}">Already have account</a></p>
-                        <P class="inputBox">
-                            
-                            <a class="google " href="{% provider_login_url 'google' %}">
-                                
-                                <i class="fa fa-google" style="padding: 5px; color: rgb(255, 255, 255); margin: 0 5px;"></i> Login with Google
-                            </a>
+                        </p>
 
-                        </P>
+                        <p class="forget"> <a href="{% url 'accounts:login' %}">Already have account</a></p>
+                        <div class="inputBox" style="margin-top:10px;">
+                            
+                            <a class="google" href="{% provider_login_url 'google' %}">
+                                
+                                <i class="fa fa-google"></i> Login with Google
+                            </a>
+                        </div>
                         
                     </form>
 

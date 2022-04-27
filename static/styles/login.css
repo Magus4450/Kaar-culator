@@ -4,9 +4,11 @@
 
 margin: 0;
 padding: 0;
-
+font-family: 'Poppins', sans-serif;
 
 }
+
+
 section{
     display: flex;
     justify-content: center;
@@ -102,8 +104,16 @@ section .color:nth-child(3)
     position:relative;
     width: 100%;
     height: 100%;
-    padding: 40px;
+    /* padding: 40px; */
+    display: flex;
+    flex-direction: column;
 
+}
+form{
+    display: flex;
+    padding: 0 20px;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 .form p
 {
@@ -111,45 +121,57 @@ section .color:nth-child(3)
 }
 .form h2
 {
-    position: relative;
+    padding: 20px;
     color: rgb(21, 4, 44);
     font-size: 24px;
     font-weight: 600;
     letter-spacing: 1px;
-    margin-bottom: 40px;
     
 
-}
-.inputBox .google:hover
-{
-    background-color: #0b00d3;
-}
-.inputBox #login:hover
-{
-    background-color: #0b00d3;
 }
 .inputBox .google
 {
     border-radius: 10px ;
     display: inline-block;  
-    padding: 8px 20px;
+    padding: 14px 20px;
     background-color: black;
     color: rgb(247, 243, 243);
     border: none;
     cursor: pointer;
-    width: 100%;
+    transition: .1s;
      
 }
+.inputBox .google:hover
+{
+    background-color: #e9e9e9;
+    color:rgb(70, 70, 70)
+    
+
+}
+
+#login{
+    transition: .1s;
+
+}
+
+#login:hover {
+    background-color: #e9e9e9;
+    color:rgb(70, 70, 70)
+}
+
+
+
+
 
 
 .form p
 {
-    width: 90%;
-    margin-top: 30px;
+    /* width: 90%; */
+    /* margin-top: 30px; */
 }
 .form p input
 {
-    width: 100%;
+    width: 90%;
     background: rgba(255,255,255,0.2);
 
     border: none;
@@ -164,6 +186,14 @@ section .color:nth-child(3)
     color: rgb(5, 5, 5);
     
 }
+/* .form p:nth-child(2) input
+{
+    width: 80%;
+}
+.form p:nth-child(3) input
+{
+    width: 80%;
+} */
 .form p input::placeholder
 {
     color: rgb(7, 7, 7);
@@ -184,8 +214,8 @@ section .color:nth-child(3)
 }
 .forget
 {
-    margin-top: 50px;
-    margin-bottom: -15px;
+    /* margin-top: 50px; */
+    /* margin-bottom: -15px; */
     color: rgb(12, 12, 12);
    
     
@@ -211,7 +241,6 @@ section .color:nth-child(3)
     left: 135px;
     font-size: 40px;
     color: #ffffff;
-    font-style:italic;
 }
 .container
 {
@@ -222,6 +251,15 @@ section .color:nth-child(3)
 
     position: relative;
     margin-top: 150px;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+.fa {
+    margin-right: 10px;
 }
 
 

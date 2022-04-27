@@ -129,11 +129,11 @@ http://www.templatemo.com/tm-509-hydro
 
   .section-btn:hover,
   .section-btn:focus {
-    background: #00F260;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); 
     border-color: transparent;
-    color: #393939;
+    color: #ffffff;
   }
 
   .overlay {
@@ -240,6 +240,7 @@ http://www.templatemo.com/tm-509-hydro
   .custom-navbar .section-btn {
     padding: 15px;
     margin-left: 2em;
+    transition: .5s;
   }
 
   .custom-navbar .section-btn:hover {
@@ -383,7 +384,6 @@ http://www.templatemo.com/tm-509-hydro
 
   #about {
     text-align: left;
-    padding-bottom: 0;
   }
 
   #about .about-info:first-child {
@@ -579,9 +579,9 @@ http://www.templatemo.com/tm-509-hydro
   }
 
   .blog-info .section-btn:hover {
-    background: #00F260;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); 
     color: #ffffff;
   }
 
