@@ -3,7 +3,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}
-    Add News
+    News
 {% endblock title %}
 
 {% block css%}
@@ -26,6 +26,8 @@
      <section id="blog" data-stellar-background-ratio="0.5">
         <div class="container">
              <div class="row">
+   
+
 
                   <div class="col-md-12 col-sm-12">
                        <div class="section-title">
@@ -33,41 +35,49 @@
                         <br/>
                         <br/>
                         <br/>
-                            <h2>Add News</h2>
+                            <h2>Account</h2>
                             <span class="line-bar">...</span>
                        </div>
                   </div>
    
-            </div>
-        </div>                    
+                                             <!-- Add News-->
+                  
 
-    </section>
-    <section  id ="update-blog" data-stellar-background-ratio="0.5" style="text-align:left !important;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-sm-10">
-                    <form method="POST">
-                        {%  csrf_token %}
-                        {{ form.media }}
-                        {{ form.as_p }}
-                        <div class="col-md-2 col-sm-4" style="padding:10px 0px 0px 0px;">
-                            <input type="submit" class="form-control" name="submit" value="Post">
-                        </div>
-                    </form>
-                </div>
-            </div>
+    <h2> Details </h2>                                
+    <p>Name : {{ user.first_name }} {{ user.last_name}}</p>
+    <p>Email : {{ user.email }}</p>
+
+    <h2> Tax Receipts </h2>
+
+    {% for tax in tax_receipts %}
+
+        <div>
+            <p> Province : {{ tax.province }}</p>
+            <p> District : {{ tax.district }}</p>s
+            <p> Local Body : {{ tax.local }}</p>
+            <p> Fiscal Year : {{ tax.fiscal_year }}</p>
+            <p> Monthly Salary : {{ tax.monthly_salary }}</p>
+            <p> Employee Provident Fund : {{ tax.employeee_provident_fund }}</p>
+            <p> Months : {{ tax.months }}</p>
+            <p> Citizen Investment Fund : {{ tax.citizen_investment_trust }}</p>
+            <p> Bonus : {{ tax.bonus }}</p>
+            <p> Insurance : {{ tax.insurance }}</p>
+            <p> Total Taxable Amount : {{ tax.final_tax }}</p>
         </div>
-    </section>
+        <a href="{% url 'tax:detail' tax.pk%}">View Details </a>
+        <button>Export to pdf </button>
+
+        <hr/>
+        <br/>
+    
+    {% endfor %}
+    
 
  {% endblock content %}
 
      
 
 {% block js %}
-    <script>
-        var name = "{{ user.id }}";
-        document.getElementById('elder').value = name;
-    </script>
      <script src="{% static 'js/jquery.js' %}"></script>
      <script src="{% static 'js/bootstrap.min.js' %}"></script>
      <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
@@ -75,3 +85,4 @@
      <script src="{% static 'js/smoothscroll.js' %}"></script>
      <script src="{% static 'js/custom.js' %}"></script>
 {% endblock js%}
+

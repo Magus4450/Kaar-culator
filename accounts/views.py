@@ -6,9 +6,10 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from .forms import LoginForm, RegisterForm
 from .models import User
+from verify_email.email_handler import send_verification_email
+from tax.models import TaxReceipt
 
-
-
+from django.views.decorators.csrf import csrf_exempt
 
 def login_view(request):
 
@@ -18,6 +19,7 @@ def login_view(request):
 
         # Check if the form is valid
         if form.is_valid():
+            
             # Check if username and password matches
             user = authenticate(
                 email = form.cleaned_data['email'],
@@ -45,27 +47,13 @@ def login_view(request):
     return render(request, 'templates/accounts/login.html', {'form': form})
 
 
-
+@csrf_exempt
 def register_view(request):
     if request.method == "POST":
         form = RegisterForm(request.POST)
         if form.is_valid():
-            user = User(
-                email = form.cleaned_data['email'],
-                first_name = form.cleaned_data['first_name'],
-                last_name = form.cleaned_data['last_name'],
-                password = form.cleaned_data['password'],                
-            )
-
-            # send_email(user)
-            # return render(request, 'templates/email/confirm_template.html')
-
-            
-
-            # To encrypt the password
-            user.set_password(form.cleaned_data['password'])
-            user.save()
-            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+            inactive_user = send_verification_email(request, form)
+   
             return redirect(reverse_lazy('home:home'))
     elif request.method == "GET":
         form = RegisterForm()
@@ -75,8 +63,8 @@ def register_view(request):
 @login_required(login_url=reverse_lazy('accounts:login'))
 def profile_view(request):
     user = request.user
-
-    return render(request, 'templates/accounts/account.html', {'user': user})
+    tax_receipts = TaxReceipt.objects.filter(user=user)
+    return render(request, 'templates/accounts/account.html', {'user': user, 'tax_receipts': tax_receipts})
 
 def logout_view(request):
     logout(request)
