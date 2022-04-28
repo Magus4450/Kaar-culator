@@ -53,8 +53,10 @@ def register_view(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             inactive_user = send_verification_email(request, form)
+
+        return render(request, 'templates/accounts/register.html', {'info': "Confirmation email has been sent. Please check you email", "form": form})
    
-            return redirect(reverse_lazy('home:home'))
+            # return redirect(reverse_lazy('home:home'))
     elif request.method == "GET":
         form = RegisterForm()
 
