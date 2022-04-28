@@ -46,6 +46,8 @@
     <p> Bonus : {{tax.bonus}}</p>
     <p> Insurance : {{tax.insurance}}</p>
     <p> Taxable Amount : {{tax.final_tax}}</p>
+
+    <a href="{% url 'tax:detail_pdf' tax.pk%}">Export to PDF </a>
     
 
 </div>
