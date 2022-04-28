@@ -1,15 +1,47 @@
+from cgitb import text
 from django.shortcuts import render, redirect
-from django.test import RequestFactory
 from django.urls import reverse_lazy
-# Create your views here.
 from .models import TaxReceipt
 from .forms import TaxForm, TaxForm2
-from django.views.generic import CreateView
 from django.contrib.auth.decorators import login_required
 from django.views.generic import DetailView
 from django.utils.decorators import method_decorator
+from django.http import FileResponse
+import io
+from reportlab.pdfgen import canvas
+from reportlab.lib.units import inch
+from reportlab.lib.pagesizes import letter
+from django.http import HttpResponse
+from django.template.loader import get_template
+from xhtml2pdf import pisa
 
-# @login_required(login_url=reverse_lazy('accounts:login'))
+
+
+
+def tax_pdf(request, pk):
+
+
+    tax = TaxReceipt.objects.get(pk=pk)
+    template = get_template('templates/tax/tax_pdf.html')
+    user = request.user
+    context = {'tax': tax, 'user':user}
+
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="tax_receipt.pdf"'
+
+    
+    html = template.render(context)
+
+    pisaStatus = pisa.CreatePDF(
+        html, dest=response)
+    if pisaStatus.err:
+        return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
+
+    
+
+
+
 class TaxDetailView(DetailView):
     context_object_name = 'tax'
     model = TaxReceipt
@@ -18,12 +50,6 @@ class TaxDetailView(DetailView):
     @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):        
         return super(TaxDetailView, self).dispatch(request, *args, **kwargs)
-
-
-# def tax_detail_view(request, pk):
-#     if request.method == "GET":
-#         detail = TaxReceipt.objects.get(pk=pk)
-#         return render(request, 'templates/tax/tax_details.html', {'detail': detail})
 
 
 @login_required(login_url=reverse_lazy('accounts:login'))
@@ -137,38 +163,3 @@ def tax_view(request):
 
     return render(request, 'templates/tax/tax.html', {"form": form})
 
-
-# def login_view(request):
-
-#     if request.method == 'POST':
-#         # Make a instance of login form with POST data
-#         form = LoginForm(request.POST)
-
-#         # Check if the form is valid
-#         if form.is_valid():
-
-#             # Check if username and password matches
-#             user = authenticate(
-#                 email = form.cleaned_data['email'],
-#                 password = form.cleaned_data['password']
-#             )
-#             print(user)
-#             # If user exists with that username and password
-#             if user:
-
-#                 # login the user
-#                 login(request, user,backend='django.contrib.auth.backends.ModelBackend')
-#                 # redirect to their profile
-#                 return redirect(reverse_lazy('home:home'))
-#             else:
-#                 print("Creds do not match")
-#         else:
-#             print("FORM INVALID")
-
-#     elif request.method == 'GET':
-#         if request.user.is_authenticated:
-#             return redirect(reverse_lazy('home:home'))
-
-#         form = LoginForm()
-
-#     return render(request, 'templates/accounts/login.html', {'form': form})

@@ -65,7 +65,7 @@
             <p> Total Taxable Amount : {{ tax.final_tax }}</p>
         </div>
         <a href="{% url 'tax:detail' tax.pk%}">View Details </a>
-        <button>Export to pdf </button>
+        <a href="{% url 'tax:detail_pdf' tax.pk%}">Export to PDF </a>
 
         <hr/>
         <br/>
