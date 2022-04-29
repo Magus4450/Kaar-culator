@@ -87,7 +87,7 @@ section .color:nth-child(3)
     position: relative;
     width: 800px;
     height: 530px;
-    background:rgba(48, 9, 219, 0.897);
+    background:rgba(8, 8, 9, 0.897);
     border-radius: 10px;
     display:flex;
     justify-content:center;
@@ -122,7 +122,7 @@ section .color:nth-child(3)
     
 
 }
-.form h2::before;
+.form h2::before
 {
     content: '';
     position: absolute;
@@ -130,7 +130,7 @@ section .color:nth-child(3)
     bottom:-10px;
     width: 80px;
     height:4px;
-    background:#fff;
+    background:#ffff;
 }
 .form .inputBox
 {
