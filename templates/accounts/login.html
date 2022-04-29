@@ -33,7 +33,7 @@
                     <form action="" method="POST">
                         {% csrf_token %}
                         {% comment %} {{ form.as_p }} {% endcomment %}
-                        {% for field in form %}
+                        {% comment %} {% for field in form %}
                             <p>
                                 {{ field.errors }}
                                 {{ field.label_tag }} {{ field }}
@@ -41,7 +41,23 @@
                                 <p class="help">{{ field.help_text|safe }}</p>
                                 {% endif %}
                             </p>
-                        {% endfor %}
+                        {% endfor %} {% endcomment %}
+
+                        {% comment %} For First Name {% endcomment %}
+                        <p>
+                        {{form.email.label_tag}}
+                        {{form.email}}
+                        </p>
+                        {{form.email.errors}}
+
+                        {% comment %} For last_name {% endcomment %}
+                        <p>
+                        {{form.password.label_tag}}
+                        {{form.password}}
+                        </p>
+                        {{form.password.errors}}
+                            
+  
                         {% if form.non_field_errors %}
                             <ul class='form-errors'>
                                 {% for error in form.non_field_errors %}

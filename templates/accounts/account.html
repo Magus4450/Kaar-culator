@@ -26,8 +26,6 @@
      <section id="blog" data-stellar-background-ratio="0.5">
         <div class="container">
              <div class="row">
-   
-
 
                   <div class="col-md-12 col-sm-12">
                        <div class="section-title">
@@ -40,7 +38,7 @@
                        </div>
                   </div>
    
-                                             <!-- Add News-->
+
                   
 
     <h2> Details </h2>                                
@@ -48,9 +46,10 @@
     <p>Email : {{ user.email }}</p>
 
     <h2> Tax Receipts </h2>
-
+    
+    {% comment %} All Tax Details {% endcomment %}
     {% for tax in tax_receipts %}
-
+        {% comment %} Each Tax Detail {% endcomment %}
         <div>
             <p> Province : {{ tax.province }}</p>
             <p> District : {{ tax.district }}</p>s

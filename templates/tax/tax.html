@@ -57,75 +57,49 @@
     <p>
         {{form.employee_nature.label_tag}}
         {{form.employee_nature}}
-        <span id="employee_nature_error" class="form-error">Erorr</span>
+        <span id="employee_nature_error" class="form-error">{{ form.employee_nature.errors}} </span>
     </p>
     <p>
         {{form.fiscal_year.label_tag}}
         {{form.fiscal_year}}
-        <span id="fiscal_year_error" class="form-error"></span>
+        <span id="fiscal_year_error" class="form-error">{{ form.fiscal_year.errors}}</span>
     </p>
     <p>
         {{form.monthly_salary.label_tag}}
         {{form.monthly_salary}}
-        <span id="monthly_salary_error" class="form-error"></span>
+        <span id="monthly_salary_error" class="form-error">{{ form.monthly_salary.errors}}</span>
     </p>
     <p>
         {{form.employee_provident_fund.label_tag}}
         {{form.employee_provident_fund}}
-        <span id="employee_provident_fund_error" class="form-error"></span>
+        <span id="employee_provident_fund_error" class="form-error">{{ form.employee_provident_fund.errors}}</span>
     </p>
     <p>
         {{form.months.label_tag}}
         {{form.months}}
-        <span id="months_error" class="form-error"></span>
+        <span id="months_error" class="form-error">{{ form.months.errors}}</span>
     </p>
     <p>
         {{form.citizen_investment_trust.label_tag}}
         {{form.citizen_investment_trust}}
-        <span id="citizen_investment_trust_error" class="form-error"></span>
+        <span id="citizen_investment_trust_error" class="form-error">{{ form.citizen_investment_trust.errors}}</span>
     </p>
     <p>
         {{form.bonus.label_tag}}
         {{form.bonus}}
-        <span id="bonus_error" class="form-error"></span>
+        <span id="bonus_error" class="form-error">{{ form.bonus.errors}}</span>
     </p>
     <p>
         {{form.insurance.label_tag}}
         {{form.insurance}}
-        <span id="insurance_error" class="form-error"></span>
+        <span id="insurance_error" class="form-error">{{ form.insurance.errors}}</span>
     </p>
 
 
 
 
     <button type="submit" id ="submit">Submit</button>
-    {% comment %} 'province',
-            'district',
-            'local',
-            'employee_nature',
-            'fiscal_year',
-            'monthly_salary',
-            'employeee_provident_fund',
-            'months',
-            'citizen_investment_trust',
-            'bonus',
-            'insurance', {% endcomment %}
-    {% comment %} {% for field in form %}
-        <p>
-            {{ field.errors }}
-            {{ field.label_tag }} {{ field }}
-            {% if field.help_text %}
-            <p class="help">{{ field.help_text|safe }}</p>
-            {% endif %}
-        </p>
-    {% endfor %}
-    {% if form.non_field_errors %}
-        <ul class='form-errors'>
-            {% for error in form.non_field_errors %}
-                <li>{{ error }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %} {% endcomment %}
+
 
 
 </form>
