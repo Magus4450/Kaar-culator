@@ -7,7 +7,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registerr</title>
+    
+    <title>Register</title>
     <link rel="stylesheet" href="{% static 'styles/login.css' %}">
     <script>src="login.js"</script>
 
@@ -22,29 +23,28 @@
             
             <div class="container">
                 <div class="container2">
-                    <img src="{% static 'images/logo.jpg' %}" style="width: 480px;00px;height: 315px;px;">
+                    <img src="{% static 'images/illustration.png' %}" style="width: 480px; height: 500px;">
                     <div class="Name">कर-Culator</div>
                 </div>
                 <div class="form">
                     <h2>Sign Up</h2>
                     
                     <form method="POST">
-                        {% csrf_token %}
-
-                        {% comment %} For First Name {% endcomment %}
-                        <p>
-                        {{form.first_name.label_tag}}
-                        {{form.first_name}}
-                        </p>
-                        {{form.first_name.errors}}
-
-                        {% comment %} For last_name {% endcomment %}
-                        <p>
-                        {{form.last_name.label_tag}}
-                        {{form.last_name}}
-                        </p>
-                        {{form.last_name.errors}}
-                            
+                        {% csrf_token %}      
+                        <div class="flexpw">              
+                                {% comment %} For First Name {% endcomment %}
+                                <p class="inputBox">
+                                {{form.first_name.label_tag}}
+                                {{form.first_name}}
+                                </p>
+                                {{form.first_name.errors}}
+                                {% comment %} For last_name {% endcomment %}
+                                <p class="inputBox1" >
+                                {{form.last_name.label_tag}}
+                                {{form.last_name}}
+                                </p>
+                                {{form.last_name.errors}}                               
+                        </div> 
                         {% comment %} For Email {% endcomment %}
                         <p>
                         {{form.email.label_tag}}
@@ -76,7 +76,7 @@
 
 
                         <P class="inputBox">
-                            <button type="submit">REGISTER</button>
+                            <button class="google" type="submit">Register</button>
                         </p>
                         <p>{{info}}</p>
 

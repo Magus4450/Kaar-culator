@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
+
+
+
 <body>
     <section>
         
@@ -25,12 +28,13 @@
             
             <div class="container">
                 <div class="container2">
-                    <img  src="{% static 'images/logo.jpg' %}"% style="width: 480px;00px;height: 315px;px;">
+                    <img src="{% static 'images/illustration.png' %}" style="width: 480px; height: 500px;">
                     <div class="Name">कर-Culator</div>
                 </div>
                 <div class="form">
-                    <h2>Login</h2>
-                    <form action="" method="POST">
+                    <h2>Log in</h2>
+                    
+                    <form method="POST">
                         {% csrf_token %}
                         {% comment %} {{ form.as_p }} {% endcomment %}
                         {% comment %} {% for field in form %}
@@ -84,7 +88,6 @@
 
                 </div>
             </div>
-
 
             </div>
     </section>
