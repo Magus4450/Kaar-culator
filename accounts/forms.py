@@ -16,7 +16,8 @@ class LoginForm(forms.Form):
     def clean(self):
         email = self.cleaned_data.get('email')
         password = self.cleaned_data.get('password')
-        print(email, password)
+        
+
         user = authenticate(email=email, password=password)
         if not user or not user.is_active:
             raise forms.ValidationError(
@@ -57,10 +58,27 @@ class RegisterForm(forms.Form):
         return user
 
     def clean(self):
-        print(self.cleaned_data['password'])
-        if self.cleaned_data['password'] != self.cleaned_data['confirm_password']:
+        print(self.cleaned_data.get('password'))
+        print(self.cleaned_data.get('confirm_password'))
+        if self.cleaned_data.get('password') != self.cleaned_data['confirm_password']:
             raise forms.ValidationError('Passwords do not match')
+        elif len(self.cleaned_data['password']) < 8:
+            raise forms.ValidationError('Password must be at least 8 characters')
+        elif not any(char.isdigit() for char in self.cleaned_data['password']):
+            raise forms.ValidationError('Password must contain at least one number')
+        elif not any(char.isupper() for char in self.cleaned_data['password']):
+            raise forms.ValidationError('Password must contain at least one uppercase letter')
+        elif not any(char.islower() for char in self.cleaned_data['password']):
+            raise forms.ValidationError('Password must contain at least one lowercase letter')
+        elif not any(char.isalpha() for char in self.cleaned_data['password']):
+            raise forms.ValidationError('Password must contain at least one letter')
+        elif self.cleaned_data['first_name'] in self.cleaned_data['password']:
+            raise forms.ValidationError('Password cannot contain first name')
+        elif self.cleaned_data['last_name'] in self.cleaned_data['password']:
+            raise forms.ValidationError('Password cannot contain last name')
         return self.cleaned_data
+    
+
 
     def clean_email(self):
         if User.objects.filter(email=self.cleaned_data['email']).exists():
