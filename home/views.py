@@ -9,7 +9,7 @@ def home_view(request):
     cat_list = Category.objects.all()
 
     news_list = NewsModel.objects.all()
-    print(cat_list)
+    
     return render(request, 'templates/home.html', {'cat_list': cat_list, 'news_list': news_list[:4]})
 
 

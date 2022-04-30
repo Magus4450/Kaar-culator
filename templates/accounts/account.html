@@ -40,8 +40,11 @@
    
 
                   
-
-    <h2> Details </h2>                                
+    {% if user.is_superuser %}
+        <h2> Admin Details </h2> 
+    {% else %}
+        <h2> Details </h2>    
+    {% endif %}                            
     <p>Name : {{ user.first_name }} {{ user.last_name}}</p>
     <p>Email : {{ user.email }}</p>
 
@@ -70,6 +73,48 @@
         <br/>
     
     {% endfor %}
+
+    <h2> Users </h2>
+    <li>
+    {% comment %} All Tax Details {% endcomment %}
+    
+        {% comment %} Each Tax Detail {% endcomment %}
+
+    </li>
+    <div class="container" style="color:white;">
+    <table class="table table-light" style="text-align:left;">
+        <thead>
+          <tr>
+            <th scope="col">User ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for usr in users %}
+          <tr>
+            <th scope="row">{{ usr.pk }}</th>
+            <td>{{ usr.first_name }}</td>
+            <td>{{ usr.last_name }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+                {% if usr.is_active %}
+                    <form action="{% url 'accounts:deactivate' usr.pk %}">
+                        <button type="submit" class="btn btn-danger">Deactivate User</button>
+                    </form>
+                {% else %}
+                    <form action="{% url 'accounts:activate' usr.pk %}">
+                        <button type="submit" class="btn btn-success">Activate User</button>
+                    </form>
+                {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
     
 
  {% endblock content %}
