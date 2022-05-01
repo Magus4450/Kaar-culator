@@ -51,6 +51,7 @@ def login_view(request):
 def register_view(request):
     if request.method == "POST":
         form = RegisterForm(request.POST)
+        print(request.POST)
         if form.is_valid():
             inactive_user = send_verification_email(request, form)
 
@@ -66,9 +67,24 @@ def register_view(request):
 def profile_view(request):
     user = request.user
     tax_receipts = TaxReceipt.objects.filter(user=user)
-    return render(request, 'templates/accounts/account.html', {'user': user, 'tax_receipts': tax_receipts})
+    users = User.objects.all()
+    return render(request, 'templates/accounts/account.html', {'user': user, 'tax_receipts': tax_receipts, 'users': users})
 
 def logout_view(request):
     logout(request)
     return redirect(reverse_lazy('home:home'))
+
+
+def deactivate_view(request, pk):
+    user = User.objects.get(pk=pk)
+    user.is_active = False
+    user.save()
+    return redirect(reverse_lazy('accounts:account'))
+
+def activate_view(request, pk):
+    user = User.objects.get(pk=pk)
+    user.is_active = True
+    user.save()
+    return redirect(reverse_lazy('accounts:account'))
+
 

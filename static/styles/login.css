@@ -83,7 +83,17 @@ section .color:nth-child(3)
 }
 .container2
 {
-    text-align: center;
+    position: relative;
+    width: 950px;
+    height: 530px;
+    background:black ;
+    border-radius: 10px;
+    display:flex;
+    justify-content:center;
+    align-items: right;
+    backdrop-filter:blur(5px);
+    
+    /*text-align: center;
     position: relative;
     width: 800px;
     height: 530px;
@@ -96,8 +106,19 @@ section .color:nth-child(3)
     box-shadow: 0 25px 45px rgba(0,0,0,0.1);
     border: 1px solid rgba(255,255,255,0.5);
     border-right: 1px solid rgba(255,255,255,0.2);
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);*/
 
+}
+.container3
+{
+    position: relative;
+    width: 500px;
+    height: 300px;
+    background:rgba(240, 235, 235, 0.938);
+    border-radius: 10px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
 }
 .form
 {
@@ -131,7 +152,7 @@ form{
 }
 .inputBox .google
 {
-    border-radius: 10px ;
+    border-radius: 5px ;
     display: inline-block;  
     padding: 14px 20px;
     background-color: black;
@@ -158,26 +179,14 @@ form{
     background-color: #e9e9e9;
     color:rgb(70, 70, 70)
 }
-
-
-
-
-
-
-.form p
-{
-    /* width: 90%; */
-    /* margin-top: 30px; */
-}
 .form p input
 {
     width: 90%;
-    background: rgba(255,255,255,0.2);
-
+    background: white;
     border: none;
     outline: none;
     padding: 10px 20px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 1px solid rgba(19, 19, 19, 0.5);
     border-right: 1px solid rgba(255,255,255,0.2);
     border-bottom: 1px solid rgba(255,255,255,0.2);
@@ -208,14 +217,25 @@ form{
   color: white;
   border: none;
   cursor: pointer;
-  width: 30%;
+  width: 20%;
   opacity: 0.9;  
     
+}
+.form p .inputBox
+{
+    border-radius: 10px ;
+    display: inline-block;  
+    padding: 14px 20px;
+    background-color: black;
+    color: rgb(247, 243, 243);
+    border: none;
+    cursor: pointer;
+    transition: .1s;
 }
 .forget
 {
     /* margin-top: 50px; */
-    /* margin-bottom: -15px; */
+    margin-bottom: 15px;
     color: rgb(12, 12, 12);
    
     
@@ -231,7 +251,7 @@ form{
 }
 .create a
 {
-    color: rgb(12, 11, 11);
+    color: rgb(18, 18, 18);
     font-weight: 600;
     
 }
@@ -250,7 +270,8 @@ form{
 {
 
     position: relative;
-    margin-top: 150px;
+    margin-top: 60px;
+    
 }
 a{
     text-decoration: none;
@@ -261,5 +282,86 @@ a:hover{
 .fa {
     margin-right: 10px;
 }
+.flexpw
+{
+    width: 342px;
+    display: flex;
+}
+.form .inputBox input[type="text"]
+{
+   margin: 0%;
+    width: 90%;
+    background: white;
+    display: flex;
+    border: none;
+    outline: none;
+    padding: 10px 35px;
+    border-radius: 5px;
+    border: 1px solid rgba(19, 19, 19, 0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgb(5, 5, 5);
+    
+}
+.form .inputBox1 input[type="text"]
+{
+   margin: 0 65px;
+    width: 90%;
+    background: white;
+    display: flex;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid rgba(19, 19, 19, 0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgb(5, 5, 5);
+    
+}
+
+/* google login */
+.box
+{
+    position: relative;
+
+}
+.box .square
+{
+    position: absolute;
+    backdrop-filter:blur(5px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    background:rgba(255,255,255,0.1);
+    border-radius: 10px;
+}
+.inputBox .google1
+{
+    margin: 0 35% ;
+    border-radius: 5px ;
+    display: inline-block;  
+    padding: 14px 40px;
+    background-color: black;
+    color: rgb(247, 243, 243);
+    border: none;
+    cursor: pointer;
+    transition: .1s;
+     
+}
+.inputBox .google1:hover
+{
+    background-color: #e9e9e9;
+    color:rgb(70, 70, 70)
+    
+
+}
+
+
 
 

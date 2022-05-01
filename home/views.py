@@ -9,9 +9,11 @@ def home_view(request):
     cat_list = Category.objects.all()
 
     news_list = NewsModel.objects.all()
-    print(cat_list)
+    
     return render(request, 'templates/home.html', {'cat_list': cat_list, 'news_list': news_list[:4]})
 
+def about_view(request):
+    return render(request, 'templates/about.html')
 
 # def CategoryView(request, cats):
 #     category_posts = NewsModel.objects.filter(category=cats.replace("-", ""))
