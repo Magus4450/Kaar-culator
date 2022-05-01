@@ -33,38 +33,63 @@
                         <br/>
                         <br/>
                         <br/>
+                        <i class="fa fa-user" style="font-size:100px;color:rgb(255, 255, 255);margin-top:-40px;margin-bottom:20px;"></i>
                             <h2>Account</h2>
+                            
                             <span class="line-bar">...</span>
+                            
+                           
                        </div>
                   </div>
+                  </div>
+                  </div>
+                  </section>
+                  
+                  
    
 
-                  
+     <div class="tax-detail">
+        <h2> Details </h2><hr>                                
+        <p>Name : {{ user.first_name }} {{ user.last_name}}</p>
+        <p>Email : {{ user.email }}</p>
 
-    <h2> Details </h2>                                
-    <p>Name : {{ user.first_name }} {{ user.last_name}}</p>
-    <p>Email : {{ user.email }}</p>
+     </div>             
 
-    <h2> Tax Receipts </h2>
+   
+     <div class="receipts">
+        <h2> Tax Receipts </h2>
+     </div>
+     
+     
+
+    
     
     {% comment %} All Tax Details {% endcomment %}
     {% for tax in tax_receipts %}
         {% comment %} Each Tax Detail {% endcomment %}
-        <div>
-            <p> Province : {{ tax.province }}</p>
-            <p> District : {{ tax.district }}</p>s
-            <p> Local Body : {{ tax.local }}</p>
-            <p> Fiscal Year : {{ tax.fiscal_year }}</p>
-            <p> Monthly Salary : {{ tax.monthly_salary }}</p>
-            <p> Employee Provident Fund : {{ tax.employeee_provident_fund }}</p>
-            <p> Months : {{ tax.months }}</p>
-            <p> Citizen Investment Fund : {{ tax.citizen_investment_trust }}</p>
-            <p> Bonus : {{ tax.bonus }}</p>
-            <p> Insurance : {{ tax.insurance }}</p>
+        <div class="rec-detail">
+            <p> Province : {{ tax.province }}</p><hr>
+            <p> District : {{ tax.district }}</p><hr>
+            <p> Local Body : {{ tax.local }}</p><hr>
+            <p> Fiscal Year : {{ tax.fiscal_year }}</p><hr>
+            <p> Monthly Salary : {{ tax.monthly_salary }}</p><hr>
+            <p> Employee Provident Fund : {{ tax.employeee_provident_fund }}</p><hr>
+            <p> Months : {{ tax.months }}</p><hr>
+            <p> Citizen Investment Fund : {{ tax.citizen_investment_trust }}</p><hr>
+            <p> Bonus : {{ tax.bonus }}</p><hr>
+            <p> Insurance : {{ tax.insurance }}</p><hr>
             <p> Total Taxable Amount : {{ tax.final_tax }}</p>
         </div>
-        <a href="{% url 'tax:detail' tax.pk%}">View Details </a>
-        <a href="{% url 'tax:detail_pdf' tax.pk%}">Export to PDF </a>
+        <div class="button-2">
+            <a href="{% url 'tax:detail' tax.pk%}">
+            <button type="submit" class="view">View Details</button>    
+            </a>
+            <a href="{% url 'tax:detail_pdf' tax.pk%}">
+            <button type="submit" class="pdf">Export to PDF</button>    
+            </a>
+            
+        </div>
+       
 
         <hr/>
         <br/>
@@ -83,5 +108,6 @@
      <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
      <script src="{% static 'js/smoothscroll.js' %}"></script>
      <script src="{% static 'js/custom.js' %}"></script>
+    
 {% endblock js%}
 

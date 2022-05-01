@@ -706,8 +706,8 @@ http://www.templatemo.com/tm-509-hydro
     background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     position: relative;
-    padding-top: 80px;
-    padding-bottom: 60px;
+    padding-top: 5px;
+    padding-bottom: 50px;
   }
 
   /* .nav .footer-nav{
