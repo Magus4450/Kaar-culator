@@ -127,7 +127,7 @@
                 <th scope="row">{{ usr.pk }}</th>
                 <td>{{ usr.first_name }}</td>
                 <td>{{ usr.last_name }}</td>
-                <td>{{ user.email }}</td>
+                <td>{{ usr.email }}</td>
                 <td>
                     {% if usr.is_active %}
                         <form action="{% url 'accounts:deactivate' usr.pk %}">
