@@ -72,12 +72,56 @@
              </div>
         </div>
    </section>
-      {% for news in news_list %}
+      {% for news in pinned_news %}
 
           <div class="col-md-6 col-sm-6">
               <!-- BLOG THUMB -->
               <div class="media blog-thumb">
                       <div class="media-body blog-info">
+                        <p style="color:black;">PINNNED</p>
+                        {% if user.is_superuser %}
+                          {% if news.pinned %}
+                          <a href="{% url 'news:unpin_post' news.pk %}">Unpin</a>
+
+                          {% else %}
+                          <a href="{% url 'news:pin_post' news.pk %}">Pin</a>
+                          {% endif %}
+                        {% endif %}
+                        <small><i class="fa fa-clock-o"></i> {{ news.post_date }}</small>
+                        <h5>{{ news.author }}</h5>
+                        <h4><a href="{% url 'news:detail' news.pk%}">{{ news.title|slice:"0:50"}} . . .</a></h4>
+                        <p>{{ news.body|safe|slice:"0:70"}} . . .</p>
+                        <a href="{% url 'news:detail' news.pk%}" class="btn section-btn">Read More</a>
+                          {% if user.is_authenticated %}
+                            {% if user.id == news.author.id %}
+                          <ul class="list-inline m-0">
+                              <li class="list-inline-item">
+                              <a href="{% url 'news:update' news.pk%}"><button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button></a>
+                              </li>
+                              <li class="list-inline-item">
+                              <a href="{% url 'news:delete' news.pk%}"><button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button></a>
+                              </li>
+                          </ul>
+                            {% endif %}
+                          {% endif %}
+                      </div>
+              </div>
+          </div>
+      {% endfor %}
+      {% for news in unpinned_news %}
+
+          <div class="col-md-6 col-sm-6">
+              <!-- BLOG THUMB -->
+              <div class="media blog-thumb">
+                      <div class="media-body blog-info">
+                        {% if user.is_superuser %}
+                          {% if news.pinned %}
+                          <a href="{% url 'news:unpin_post' news.pk %}">Unpin</a>
+
+                          {% else %}
+                          <a href="{% url 'news:pin_post' news.pk %}">Pin</a>
+                          {% endif %}
+                        {% endif %}
                         <small><i class="fa fa-clock-o"></i> {{ news.post_date }}</small>
                         <h5>{{ news.author }}</h5>
                         <h4><a href="{% url 'news:detail' news.pk%}">{{ news.title|slice:"0:50"}} . . .</a></h4>
