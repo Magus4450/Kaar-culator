@@ -1,5 +1,6 @@
 
 
+import re
 from turtle import st
 from typing import Any
 from xmlrpc.client import FastParser
@@ -13,13 +14,19 @@ from .forms import PostForm, UpdateForm
 class NewsListView(ListView):
     model = NewsModel
     template_name = 'templates/news/news.html'
-    context_object_name = 'news_list'
+    # context_object_name = 'news_list'
 
     def get_context_data(self, *args, **kwargs):
+
+        pinned_news = NewsModel.objects.filter(pinned=True)
+        unpinned_news = NewsModel.objects.filter(pinned=False)
+
 
         cat_list = Category.objects.all()
         context = super(NewsListView, self).get_context_data(*args, **kwargs)
         context["cat_list"] = cat_list
+        context["pinned_news"] = pinned_news
+        context["unpinned_news"] = unpinned_news
         
         return context
 
@@ -94,4 +101,15 @@ def LikeView(request, pk):
 
     return HttpResponseRedirect(reverse('news:detail', args=[str(pk)]))
 
-    
+def pin_news(request, pk):
+    news = NewsModel.objects.get(id=pk)
+    news.pinned = True
+    news.save()
+
+    return HttpResponseRedirect(reverse('news:list'))
+
+def unpin_news(request, pk):
+    news = NewsModel.objects.get(id=pk)
+    news.pinned = False
+    news.save()
+    return HttpResponseRedirect(reverse('news:list'))

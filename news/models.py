@@ -30,6 +30,8 @@ class NewsModel(models.Model):
 
     likes = models.ManyToManyField(User, related_name='news_posts', blank=True)
 
+    pinned = models.BooleanField(default=False)
+
     class Meta:
         ordering = ['-post_date']
 
