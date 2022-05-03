@@ -120,6 +120,10 @@ section .color:nth-child(3)
     justify-content:center;
     align-items: center;
 }
+.container4
+{
+    
+}
 .form
 {
     position:relative;
@@ -165,7 +169,7 @@ form{
 .inputBox .google:hover
 {
     background-color: #e9e9e9;
-    color:rgb(70, 70, 70)
+    color:blue;
     
 
 }
@@ -177,7 +181,7 @@ form{
 
 #login:hover {
     background-color: #e9e9e9;
-    color:rgb(70, 70, 70)
+    color:blue;
 }
 .form p input
 {
@@ -346,7 +350,7 @@ a:hover{
     margin: 0 35% ;
     border-radius: 5px ;
     display: inline-block;  
-    padding: 14px 40px;
+    padding: 14px 20px;
     background-color: black;
     color: rgb(247, 243, 243);
     border: none;
@@ -357,7 +361,7 @@ a:hover{
 .inputBox .google1:hover
 {
     background-color: #e9e9e9;
-    color:rgb(70, 70, 70)
+    color:blue;
     
 
 }
