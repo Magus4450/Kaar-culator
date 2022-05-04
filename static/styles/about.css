@@ -1,0 +1,106 @@
+.social-link {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.social-link:hover, .social-link:focus {
+    background: #ddd;
+    text-decoration: none;
+    color: #555;
+}
+  .img
+  {
+      height: 100px;
+      width: 100px;
+  }
+.caption-1 figcaption {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .caption-2 figcaption {
+    width: 80%;
+    position: absolute;
+    bottom: 1rem;
+    left: 10%;
+    background: rgba(255, 255, 255, 0.6);
+  }
+  
+  .caption-3 figcaption {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  
+
+.container-fluid
+{
+    background-color: #010449
+}
+.msg-form
+{
+    background-color: white;padding: 20px
+}
+.pad-icon
+{
+    padding-top: 50px;padding-left: 20px
+}
+.pad-icon a
+{
+    text-decoration: none;margin-right: 40px
+}
+
+.pad-icon a:active
+{
+    height: 30px;width: 30px;
+    border-radius: 100%
+}
+.links
+{
+    padding-top: 50px;
+    width:100%
+}
+#bordering a:active
+{
+    border:1px solid #0080ff;
+}
+@media(min-width:568px)
+{
+    .container-fluid
+    {
+        margin: 100px 30px;
+        width: 96%;
+        padding-top: 50px;
+        padding-bottom: 50px}
+}
+@media(max-width:567px)
+{
+    .container-fluid
+    {
+        margin: 10px 10px;
+        width: 94%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .pad
+    {
+        padding-top: 20px
+    }
+}
+
+
+  
+  
+ 
+  
+ 

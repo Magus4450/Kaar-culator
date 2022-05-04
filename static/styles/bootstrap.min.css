@@ -254,13 +254,7 @@ th {
         text-decoration: underline
     }
 
-    a[href]:after {
-        content: " ("attr(href) ")"
-    }
-
-    abbr[title]:after {
-        content: " ("attr(title) ")"
-    }
+  
 
     a[href^="javascript:"]:after,
     a[href^="#"]:after {
@@ -1533,6 +1527,8 @@ h6 {
     font-weight: 500;
 
    
+    line-height: 1.1;
+    color: inherit;
 }
 
 .h1 .small,
@@ -3273,7 +3269,7 @@ legend {
 }
 
 label {
-    display: inline-block
+    display: inline-block;
     max-width:100%;
     margin-bottom:5px;
     font-weight:700;
