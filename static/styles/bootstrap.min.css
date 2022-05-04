@@ -71,14 +71,12 @@ dfn {
 }
 
 h1 {
-<<<<<<< HEAD
-    margin: .67em 0;
-    font-size: 2em
-=======
+
+
     
     margin: 0 50px;
     
->>>>>>> 3bf7c1f09a99d6ce92d594aab07ccc889e3fc7e7
+
 }
 
 mark {
@@ -144,17 +142,12 @@ select,
 textarea {
     margin: 0;
     font: inherit;
-<<<<<<< HEAD
-    color: inherit;
-    margin-top:-30px;
-}
 
 
-=======
     color: inherit
 }
 
->>>>>>> 3bf7c1f09a99d6ce92d594aab07ccc889e3fc7e7
+
 button {
     overflow: visible
 }
@@ -172,14 +165,12 @@ input[type=submit] {
     cursor: pointer
 }
 
-<<<<<<< HEAD
 
-=======
 button[disabled],
 html input[disabled] {
     cursor: default
 }
->>>>>>> 3bf7c1f09a99d6ce92d594aab07ccc889e3fc7e7
+
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
@@ -191,28 +182,6 @@ input {
     line-height: normal
 }
 
-<<<<<<< HEAD
-
-button#submit{
-    border:0px;
-    margin-left:750px;
-    margin-bottom:30px;
-    padding:15px 30px;
-    margin-top:30px;
-    width:200px;
-    border-radius:100px;
-    color:white;
-    background:#ce3232;
-    height:60px;
-    font-size: 18px;
-
-}
-button#submit:hover{
-    background-color: #333;
-}
-
-=======
->>>>>>> 3bf7c1f09a99d6ce92d594aab07ccc889e3fc7e7
 input[type=checkbox],
 input[type=radio] {
     -webkit-box-sizing: border-box;
@@ -1561,13 +1530,9 @@ h4,
 h5,
 h6 {
     font-family: inherit;
-<<<<<<< HEAD
     font-weight: 500;
-=======
-    
->>>>>>> 3bf7c1f09a99d6ce92d594aab07ccc889e3fc7e7
-    line-height: 1.1;
-    color: inherit
+
+   
 }
 
 .h1 .small,
@@ -3308,18 +3273,10 @@ legend {
 }
 
 label {
-    display: inline-block;
-<<<<<<< HEAD
-    max-width: 50%;
-    margin-bottom: 0px;
-    font-weight: 700;
-    margin-left: 200px;
-    margin-top: 30px;
-=======
-    max-width: 100%;
-    margin-bottom: 5px;
-    font-weight: 700
->>>>>>> 3bf7c1f09a99d6ce92d594aab07ccc889e3fc7e7
+    display: inline-block
+    max-width:100%;
+    margin-bottom:5px;
+    font-weight:700;
 }
 
 input[type=search] {
@@ -3377,12 +3334,7 @@ output {
     background-image: none;
     border: 1px solid #ccc;
     border-radius: 4px;
-<<<<<<< HEAD
-    margin-left: 500px;
-    
-    /* margin-top: 10px; */
-=======
->>>>>>> 3bf7c1f09a99d6ce92d594aab07ccc889e3fc7e7
+
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
     -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
@@ -3390,100 +3342,6 @@ output {
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
 }
 
-<<<<<<< HEAD
-    #myform{
-        width:50%;
-
-    }
-    
-.tax-detail{
-    /* border: white;
-    border-color: white; */
-    background-color: #333333;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    margin:50px;
-    margin-left: 500px;
-    margin-right: 500px;
-    height:150px;
-    margin-top: 50px;
-    border-radius: 10px;
-
-}
-
-.tax-detail  p , .tax-detail h2{
-    margin-left:150px;
-    
-
-}
-.tax-detail h2{
-    margin-top: 10px;
-    margin-left: 200px;
-}
-.rec-detail {
-    margin-left: 500px;
-    border:2px solid grey;
-    margin-right: 500px;
-    border-radius:10px;
-    
-    /* background-color: #333333; */
-    
-}
-.rec-detail p{
-    margin-left: 80px;
-}
-.receipts h2{
-    margin-left:675px;
-    color:grey;
-}
-.button-2{
-    margin-left: 650px;
-    margin-top: 20px;
-    
-}
-
-
-button.view,button.pdf{
-   
-    height:30px;
-    color:grey;
-}
-button.view:hover,button.pdf:hover{
-    color:#ce3232;
-}
-
-.tax-detail-1{
-    margin-left: 500px;
-    border:2px solid grey;
-    margin-right: 500px;
-    /* border-radius:10px; */
-    margin-top: 20px;
-}
-.tax-detail-1 p{
-    margin-left: 80px;
-}
-.button-3{
-    margin-left: 700px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    
-}
-button.detail-pdf{
-    height:30px;
-    color:grey;
-
-}
-button.detail-pdf:hover{
-    color:#ce3232;
-}
-
-i .fa fa-user{
-    font-size:50px;
-}
-
-
-=======
->>>>>>> 3bf7c1f09a99d6ce92d594aab07ccc889e3fc7e7
 .form-control:focus {
     border-color: #66afe9;
     outline: 0;
@@ -4530,14 +4388,7 @@ input[type=submit].btn-block {
     width: 100%
 }
 
-<<<<<<< HEAD
-/* input[type=submit].form-control{
-    margin-top: 10px;
-    margin-left:475px;
-} */
 
-=======
->>>>>>> 3bf7c1f09a99d6ce92d594aab07ccc889e3fc7e7
 .fade {
     opacity: 0;
     -webkit-transition: opacity .15s linear;
@@ -8039,14 +7890,6 @@ button.close {
     margin: 1px;
     text-indent: -999px;
     cursor: pointer;
-<<<<<<< HEAD
-    background-color: #000\9;
-=======
-    background-color: #0009;
->>>>>>> 3bf7c1f09a99d6ce92d594aab07ccc889e3fc7e7
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid #fff;
-    border-radius: 10px
 }
 
 .carousel-indicators .active {

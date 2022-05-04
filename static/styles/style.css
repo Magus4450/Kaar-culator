@@ -65,7 +65,7 @@ section .color:nth-child(3)
     border-radius: 10px;
 }
 
-.container
+/* .container
 {
     position: relative;
     width: 950px;
@@ -80,7 +80,7 @@ section .color:nth-child(3)
     border: 1px solid rgba(255,255,255,0.5);
     border-right: 1px solid rgba(255,255,255,0.2);
     border-bottom: 1px solid rgba(255,255,255,0.2);
-}
+} */
 .container2
 {
     text-align: center;
@@ -122,7 +122,7 @@ section .color:nth-child(3)
     
 
 }
-.form h2::before;
+/* .form h2::before;
 {
     content: '';
     position: absolute;
@@ -131,7 +131,7 @@ section .color:nth-child(3)
     width: 80px;
     height:4px;
     background:#fff;
-}
+} */
 .form .inputBox
 {
     width: 90%;
@@ -204,6 +204,167 @@ section .color:nth-child(3)
     position: relative;
     margin-top: 150px;
 }
-/* #myform{
-    margin:10px 500px 10px 500px;
+/* .blog-info .section-btn{
+    background-color: #ce3232;
+    color:#ffffff;
+    margin-top: 20px;
 } */
+
+#work #cf-budgets{
+    margin-left: -850px;
+    width:250px;
+    margin-top: -200px;
+}
+#work .form-control{
+    margin-left: -550px;
+    width:250px;
+    margin-top: -200px;
+}
+/* #blog .container .row{
+    background-color: black;
+} */
+#myform p{
+    margin-left: 400px;
+    width:50%;
+    margin-top: 40px;
+
+}
+button#submit{
+    border:0px;
+    margin-left: 700px;
+    margin-bottom:30px;
+    padding:15px 30px;
+    margin-top: 30px;
+    width:200px;
+    border-radius: 100px;
+    color:white;
+    background:#ce3232;
+    height:60px;
+    font-size: 20px;
+    cursor: pointer;
+}
+button#submit:hover{
+    background: linear-gradient(to right,#434343,#000000);
+}
+#myform p label {
+    margin-left:-200px;
+    
+
+    }
+    
+
+ .fa-bookmark{
+    font-size: 20px;
+    margin-left: 500px;
+    
+}
+.blog-thumb a .fa-bookmark{
+    color:#ce3232;
+}
+.blog-thumb a .fa-bookmark:hover{
+    color:#434343;
+    
+}
+.tax-detail{
+    margin-left: 475px;
+}
+.tax-detail h2,.tax-detail p{
+    margin-left: 200px;
+    
+}
+.tax-detail{
+    border: 1px solid grey;
+    width:40%;
+    background: #333333;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.receipts{
+    margin-left: 400px;
+    margin-top: 50px;
+    border: 2px solid grey;
+    margin-right: 400px;
+    width:50%;
+    border-style:dashed;
+    margin-bottom: 100px;
+    
+
+}
+
+.rec-detail p{
+    margin-top: 20px;
+    color:black;
+    margin-left: 200px;
+}
+
+.receipts h2{
+    margin-left: 200px;
+    color:black;
+}
+.button-2 .view , .pdf{
+    border:0px;
+    margin-left: 120px;
+    margin-bottom:20px;
+    padding:15px 15px;
+    margin-top: 20px;
+    width:200px;
+    border-radius: 100px;
+    color:white;
+    background:#ce3232;
+    height:50px;
+    font-size: 15px;
+    cursor: pointer;
+
+}
+.button-2 .view:hover, .pdf:hover{
+    background: linear-gradient(to right,#434343,#000000);
+
+}
+.rec-detail h4{
+    margin-left: 200px;
+    color:black;
+}
+.user h2{
+    margin-left: 700px;
+    margin-top: 80px;
+    color:#000000;
+    margin-bottom: 30px;
+}
+.tax-detail-1{
+    
+    margin-left: 400px;
+    margin-top: 50px;
+    border: 2px solid grey;
+    margin-right: 400px;
+    width:50%;
+    border-style:dashed;
+    margin-bottom: 50px;
+}
+.tax-detail-1 p{
+    margin-top: 20px;
+    color:black;
+    margin-left: 200px;
+}
+.button-3 .detail-pdf{
+    border:0px;
+    margin-left: 200px;
+    margin-bottom:50px;
+    padding:15px 15px;
+    margin-top: 20px;
+    width:200px;
+    border-radius: 100px;
+    color:white;
+    background:#ce3232;
+    height:50px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.button-3 .detail-pdf:hover{
+    background: linear-gradient(to right,#434343,#000000);
+}
+.tax-detail-1 h4{
+    margin-left: 200px;
+    color:black;
+}
+
