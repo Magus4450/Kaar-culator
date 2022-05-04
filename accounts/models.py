@@ -4,7 +4,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import UserManager as BaseUserManager
 
-
+import random
 
 """
     Since we are using Django's built-in User model and we are not using 'username' field to login or register,
@@ -43,6 +43,9 @@ class User(AbstractUser):
     email = models.EmailField("Email", blank=False, null=False, unique=True)
     first_name = models.CharField(("first name"), max_length=150, blank=False)
     last_name = models.CharField(("last name"), max_length=150, blank=False)
+
+    CHOICES = ['1','2','3','4']
+    image = models.CharField(max_length=200, default=f"/static/images/avatar{random.choice(CHOICES)}.png")
 
 
 
