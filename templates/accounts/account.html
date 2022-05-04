@@ -3,16 +3,55 @@
 {% block title %} News 
 {% endblock title %} 
 {% block css%}
+
 <link rel="stylesheet" href="{% static 'styles/bootstrap.min.css' %}" />
 {% comment %} <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> {% endcomment %}
 <link rel="stylesheet" href="{% static 'styles/magnific-popup.css' %}" />
 <link rel="stylesheet" href="{% static 'styles/font-awesome.min.css' %}" />
 <link rel="stylesheet" href="{% static 'styles/templatemo-style.css' %}" />
-<style>
-  #blog {
-    background: linear-gradient(to right, #505050, #101010);
-  }
-</style>
+<link rel="stylesheet" href="{% static 'styles/style.css' %}">
+     <style>
+         #blog{
+            background: linear-gradient(to right, #505050, #101010);
+            margin-top:-300px;
+         }
+         .nav1 {
+             margin-left: 400px;
+             margin-bottom: 50px;
+             font-size: 15px;
+             
+           
+             
+             
+         }
+         .nav1 a{
+             padding: 8px 16px;
+             border:0px solid grey;
+             
+             display:inline-block;
+             
+             
+         }
+         .nav a:hover{
+             background-color: #ddd;
+             color:black;
+         }
+         .previous{
+             background-color: #f1f1f1;
+             color:black;
+             border-radius: 100px;
+
+         }
+         .previous:hover, .next:hover{
+             color:#101010;
+         }
+         .next{
+             background-color: #ce3232;
+             color:white;
+             border-radius: 100px;
+         }
+         
+     </style>
 {% endblock css %} 
 {% block content %}
 
@@ -137,9 +176,15 @@
       {% endfor %}
     </tbody>
   </table>
+  <div class="nav1">
+    <a href="" class="previous">&laquo;previous</a>
+    <a href="" class="next">Next&raquo;</a>
+ </div>
+</div>
 </div>
 {% endif %} 
 {% endblock content %} 
+
 {% block js %}
 <script src="{% static 'js/jquery.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
