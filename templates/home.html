@@ -9,6 +9,7 @@
      <link rel="stylesheet" href="{% static 'styles/magnific-popup.css' %}">
      <link rel="stylesheet" href="{% static 'styles/font-awesome.min.css' %}">
      <link rel="stylesheet" href="{% static 'styles/templatemo-style.css' %}">
+     <link rel="stylesheet" href="{% static 'styles/style.css' %}">
 {% endblock css %}
 
 {% block content %}
@@ -21,10 +22,11 @@
                <div class="row" style="display: flex; align-items:center;">
 
                     <div class="col-md-6 col-sm-12">
-                         <div class="home-video">
+                         <div class="home-img">
                               <div class="embed-responsive embed-responsive-16by9">
                                    
-                                   <iframe width="560" height="315" src="https://www.youtube.com/embed/GG-BRAVIhm0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                   <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/GG-BRAVIhm0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                                   <img src="{% static 'images/home-bg.jpg' %}" class="img-responsive" alt="">
                               </div>
                          </div>
                     </div>
