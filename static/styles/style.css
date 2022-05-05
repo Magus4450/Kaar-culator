@@ -268,7 +268,7 @@ button#submit:hover{
 .tax-detail{
     margin-left: 475px;
 }
-.tax-detail h2,.tax-detail p{
+.tax-detail h2{
     margin-left: 200px;
     
 }
@@ -278,6 +278,13 @@ button#submit:hover{
     background: #333333;
     margin-top: 20px;
     border-radius: 10px;
+}
+.tax-detail img{
+    margin-left: 50px;
+}
+.tax-detail p{
+    margin-bottom: 20px;
+    margin-left: 200px;
 }
 
 .receipts{
@@ -367,4 +374,5 @@ button#submit:hover{
     margin-left: 200px;
     color:black;
 }
+
 

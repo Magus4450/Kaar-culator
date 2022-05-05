@@ -19,11 +19,10 @@
              margin-left: 400px;
              margin-bottom: 50px;
              font-size: 15px;
-             
-           
-             
-             
-         }
+ }
+  #blog h2{
+    margin-top: 50px;
+  }
          .nav1 a{
              padding: 8px 16px;
              border:0px solid grey;
@@ -50,6 +49,10 @@
              color:white;
              border-radius: 100px;
          }
+         .user h2{
+           margin-left: 700px;
+           color:black;
+         }
          
      </style>
 {% endblock css %} 
@@ -69,10 +72,9 @@
           <i
             class="fa fa-user"
             style="
-              font-size: 100px;
+              font-size: 80px;
               color: rgb(255, 255, 255);
-              margin-top: -40px;
-              margin-bottom: 20px;
+              margin-top: 250px;
             "
           ></i>
           <h2>Account</h2>
@@ -93,37 +95,38 @@
   <img src="{{user.image}}" style="width: 60px; height: 60px" />
   <p>Name : {{ user.first_name }} {{ user.last_name}}</p>
   <p>Email : {{ user.email }}</p>
+</div>
   
 
 <div class="receipts">
   <h2>Tax Receipts</h2>
-</div>
+
 
 {% comment %} All Tax Details {% endcomment %} 
 {% for tax in tax_receipts %} 
 {% comment %} Each Tax Detail {% endcomment %}
 <div class="rec-detail">
   <p>Province : {{ tax.province }}</p>
-  <hr />
+  
   <p>District : {{ tax.district }}</p>
-  <hr />
+  
   <p>Local Body : {{ tax.local }}</p>
-  <hr />
+  
   <p>Fiscal Year : {{ tax.fiscal_year }}</p>
-  <hr />
+  
   <p>Monthly Salary : {{ tax.monthly_salary }}</p>
-  <hr />
+  
   <p>Employee Provident Fund : {{ tax.employeee_provident_fund }}</p>
-  <hr />
+  
   <p>Months : {{ tax.months }}</p>
-  <hr />
+  
   <p>Citizen Investment Fund : {{ tax.citizen_investment_trust }}</p>
-  <hr />
+  
   <p>Bonus : {{ tax.bonus }}</p>
-  <hr />
-  <p>Insurance : {{ tax.insurance }}</p>
-  <hr />
-  <p>Total Taxable Amount : {{ tax.final_tax }}</p>
+  
+  <p>Insurance : {{ tax.insurance }}</p><hr>
+  
+  <p><h4>Total Taxable Amount : {{ tax.final_tax }}</h4></p>
 </div>
 <div class="button-2">
   <a href="{% url 'tax:detail' tax.pk%}">
@@ -138,8 +141,12 @@
 <br />
 
 {% endfor %} 
+</div>
 {% if user.is_superuser %}
-<h2>Users</h2>
+<div class="user">
+  <h2>Users</h2>
+</div>
+
 
 <div class="container">
   <table class="table table-dark" style="text-align: left">
@@ -181,7 +188,7 @@
     <a href="" class="next">Next&raquo;</a>
  </div>
 </div>
-</div>
+
 {% endif %} 
 {% endblock content %} 
 
