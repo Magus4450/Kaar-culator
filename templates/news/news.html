@@ -17,6 +17,11 @@
          #blog{
             background: linear-gradient(to right, #505050, #101010);
          }
+         .card{
+           margin-top: -450px;
+         }
+         
+         
        
      </style>
 {% endblock css %}
@@ -76,6 +81,8 @@
              </div>
         </div>
    </section>
+
+   <div class="card">
    
    
       {% for news in pinned_news %}
@@ -84,13 +91,13 @@
               <!-- BLOG THUMB -->
               <div class="media blog-thumb">
                       <div class="media-body blog-info">
-                        <p style="color:black;"></i><i class="fa fa-bookmark"></i></p>
+                        <p style="color:black;margin-top: -50px;"></i><i class="fa fa-bookmark"></i></p>
                         {% if user.is_superuser %}
                           {% if news.pinned %}
-                          <a href="{% url 'news:unpin_post' news.pk %}"> <i class='fa fa-bookmark'></i></a>
+                          <a href="{% url 'news:unpin_post' news.pk %}"> <i  class='fa fa-bookmark'></i></a>
 
                           {% else %}
-                          <a href="{% url 'news:pin_post' news.pk %}"><i class='fa fa-bookmark'></i></a>
+                          <a href="{% url 'news:pin_post' news.pk %}"><i  class='fa fa-bookmark' style="margin-top:-50px;"></i></a>
                           {% endif %}
                         {% endif %}
                         <small><i class="fa fa-clock-o"></i> {{ news.post_date }}</small>
@@ -125,7 +132,7 @@
                           <a href="{% url 'news:unpin_post' news.pk %}"><i class="fa fa-bookmark"></i></a>
 
                           {% else %}
-                          <a href="{% url 'news:pin_post' news.pk %}"><i class="fa fa-bookmark"></i></a>
+                          <a href="{% url 'news:pin_post' news.pk %}"><i class="fa fa-bookmark "style="margin-top:-50px;"></i></a>
                           {% endif %}
                         {% endif %}
                         <small><i class="fa fa-clock-o"></i> {{ news.post_date }}</small>
@@ -153,6 +160,7 @@
    </section>
 
  {% endblock content %}
+</div>
 
      
 
