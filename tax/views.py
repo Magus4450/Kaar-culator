@@ -1,4 +1,3 @@
-from cgitb import text
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from .models import TaxReceipt
@@ -6,11 +5,6 @@ from .forms import TaxForm, TaxForm2
 from django.contrib.auth.decorators import login_required
 from django.views.generic import DetailView
 from django.utils.decorators import method_decorator
-from django.http import FileResponse
-import io
-from reportlab.pdfgen import canvas
-from reportlab.lib.units import inch
-from reportlab.lib.pagesizes import letter
 from django.http import HttpResponse
 from django.template.loader import get_template
 from xhtml2pdf import pisa

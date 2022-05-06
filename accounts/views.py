@@ -88,3 +88,4 @@ def activate_view(request, pk):
     return redirect(reverse_lazy('accounts:account'))
 
 
+
