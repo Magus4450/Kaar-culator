@@ -71,8 +71,17 @@ dfn {
 }
 
 h1 {
+<<<<<<< HEAD
     margin: .67em 0;
     font-size: 2em
+=======
+
+
+    
+    margin: 0 50px;
+    
+
+>>>>>>> 0359cc2aae45e1f4edde00454cb729823b3ebeaa
 }
 
 mark {
@@ -138,11 +147,20 @@ select,
 textarea {
     margin: 0;
     font: inherit;
+<<<<<<< HEAD
     color: inherit;
     margin-top:-30px;
 }
 
 
+=======
+
+
+    color: inherit
+}
+
+
+>>>>>>> 0359cc2aae45e1f4edde00454cb729823b3ebeaa
 button {
     overflow: visible
 }
@@ -160,6 +178,15 @@ input[type=submit] {
     cursor: pointer
 }
 
+<<<<<<< HEAD
+=======
+
+button[disabled],
+html input[disabled] {
+    cursor: default
+}
+
+>>>>>>> 0359cc2aae45e1f4edde00454cb729823b3ebeaa
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
@@ -171,6 +198,7 @@ input {
     line-height: normal
 }
 
+<<<<<<< HEAD
 
 button#submit{
     border:0px;
@@ -190,6 +218,8 @@ button#submit:hover{
     background-color: #333;
 }
 
+=======
+>>>>>>> 0359cc2aae45e1f4edde00454cb729823b3ebeaa
 input[type=checkbox],
 input[type=radio] {
     -webkit-box-sizing: border-box;
@@ -262,13 +292,7 @@ th {
         text-decoration: underline
     }
 
-    a[href]:after {
-        content: " ("attr(href) ")"
-    }
-
-    abbr[title]:after {
-        content: " ("attr(title) ")"
-    }
+  
 
     a[href^="javascript:"]:after,
     a[href^="#"]:after {
@@ -1539,6 +1563,11 @@ h5,
 h6 {
     font-family: inherit;
     font-weight: 500;
+<<<<<<< HEAD
+=======
+
+   
+>>>>>>> 0359cc2aae45e1f4edde00454cb729823b3ebeaa
     line-height: 1.1;
     color: inherit;
 }
@@ -3282,11 +3311,17 @@ legend {
 
 label {
     display: inline-block;
+<<<<<<< HEAD
     max-width: 50%;
     margin-bottom: 0px;
     font-weight: 700;
     margin-left: 200px;
     margin-top: 30px;
+=======
+    max-width:100%;
+    margin-bottom:5px;
+    font-weight:700;
+>>>>>>> 0359cc2aae45e1f4edde00454cb729823b3ebeaa
 }
 
 input[type=search] {
@@ -3344,9 +3379,13 @@ output {
     background-image: none;
     border: 1px solid #ccc;
     border-radius: 4px;
+<<<<<<< HEAD
     margin-top: 10px;
     
     /* margin-top: 10px; */
+=======
+
+>>>>>>> 0359cc2aae45e1f4edde00454cb729823b3ebeaa
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
     -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
@@ -3354,6 +3393,7 @@ output {
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
 }
 
+<<<<<<< HEAD
     #myform{
         width:50%;
 
@@ -3445,6 +3485,8 @@ i .fa fa-user{
 }
 
 
+=======
+>>>>>>> 0359cc2aae45e1f4edde00454cb729823b3ebeaa
 .form-control:focus {
     border-color: #66afe9;
     outline: 0;
@@ -4491,10 +4533,13 @@ input[type=submit].btn-block {
     width: 100%
 }
 
+<<<<<<< HEAD
 /* input[type=submit].form-control{
     margin-top: 10px;
     margin-left:475px;
 } */
+=======
+>>>>>>> 0359cc2aae45e1f4edde00454cb729823b3ebeaa
 
 .fade {
     opacity: 0;
@@ -7998,10 +8043,13 @@ button.close {
     margin: 1px;
     text-indent: -999px;
     cursor: pointer;
+<<<<<<< HEAD
     background-color: #0009;
     background-color: rgba(0, 0, 0, 0);
     border: 1px solid #fff;
     border-radius: 10px
+=======
+>>>>>>> 0359cc2aae45e1f4edde00454cb729823b3ebeaa
 }
 
 .carousel-indicators .active {

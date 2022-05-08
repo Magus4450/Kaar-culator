@@ -25,7 +25,7 @@ with open('./tax/data.json', 'r') as data_file:
             final_data["2"].append(datum)
         elif prov == "Bagmati":
             final_data["Bagmati"].append(datum)
-        elif prov == "4":
+        elif prov == "Gandaki":
             final_data["Gandaki"].append(datum)
         elif prov == "5":
             final_data["Lumbini"].append(datum)

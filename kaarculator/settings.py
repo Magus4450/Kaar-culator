@@ -188,7 +188,6 @@ ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_UNIQUE_EMAIL = True
 
-
 # Setting up static files
 
 STATIC_URL = '/static/'

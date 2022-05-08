@@ -76,6 +76,7 @@ class RegisterForm(forms.Form):
             raise forms.ValidationError('Password cannot contain first name')
         elif self.cleaned_data['last_name'] in self.cleaned_data['password']:
             raise forms.ValidationError('Password cannot contain last name')
+        
         return self.cleaned_data
     
 
@@ -84,3 +85,5 @@ class RegisterForm(forms.Form):
         if User.objects.filter(email=self.cleaned_data['email']).exists():
             raise forms.ValidationError('Email already exists')
         return self.cleaned_data['email']
+
+
