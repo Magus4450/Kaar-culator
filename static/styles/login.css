@@ -86,7 +86,7 @@ section .color:nth-child(3)
     position: relative;
     width: 950px;
     height: 530px;
-    background:black ;
+    background:rgb(44, 42, 42) ;
     border-radius: 10px;
     display:flex;
     justify-content:center;
@@ -119,11 +119,9 @@ section .color:nth-child(3)
     display:flex;
     justify-content:center;
     align-items: center;
+    text-align: center;
 }
-.container4
-{
-    
-}
+
 .form
 {
     position:relative;
@@ -159,7 +157,7 @@ form{
     border-radius: 5px ;
     display: inline-block;  
     padding: 14px 20px;
-    background-color: black;
+    background-color: rgb(53, 52, 52);
     color: rgb(247, 243, 243);
     border: none;
     cursor: pointer;
@@ -217,7 +215,7 @@ form{
   display: inline-block; 
   padding: 14px 20px;
   margin: 8px 0;
-  background-color: black;
+  background-color: rgb(53, 52, 52);
   color: white;
   border: none;
   cursor: pointer;
@@ -351,7 +349,7 @@ a:hover{
     border-radius: 5px ;
     display: inline-block;  
     padding: 14px 20px;
-    background-color: black;
+    background-color: rgb(53, 52, 52);
     color: rgb(247, 243, 243);
     border: none;
     cursor: pointer;
