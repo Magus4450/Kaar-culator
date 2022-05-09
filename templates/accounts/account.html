@@ -61,7 +61,7 @@
   {% if user.is_superuser %}
   <h2>Admin Details</h2>
   {% else %}
-  <h2>Details</h2>
+  <h2>User Details</h2>
   {% endif %}
   <img src="{{user.image}}" style="width: 60px; height: 60px" />
   <p>Name : {{ user.first_name }} {{ user.last_name}}</p>
