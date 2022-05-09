@@ -39,7 +39,7 @@
                               <div class="embed-responsive embed-responsive-16by9">
                                    
                                    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/GG-BRAVIhm0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-                                   <img src="{% static 'images/home-bg.jpg' %}" class="img-responsive" alt="">
+                                   <img src="{% static 'images/hero.svg' %}" class="img-responsive" alt="" style="width:80%;">
                               </div>
                          </div>
                     </div>
@@ -104,19 +104,15 @@
      <section id="work" data-stellar-background-ratio="0.5">
           <div class="container">
                <div class="row">
-                    <div class="col-md-2 col-sm-12">
-                         <!-- <input type="submit" class="form-control" name="submit" value="Add News"> -->
-                    </div>
-                         {% comment %} <div class="col-md-2 col-sm-6">
-                                   <select class="form-control" id="cf-budgets" name="cf-budgets" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
-                                        <option value="">Select...</option>
-                                        {% for cat in cat_list %}
-                                            <option value="{% url 'news:category' cat.name|slugify%}">{{ cat.name }}</option>
-                                        {% endfor %}
+                          {% comment %} <div class="col-md-2 col-sm-6">
+                              <select class="form-control" id="cf-budgets" name="cf-budgets" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+                                   <option value="">Select...</option>
+                                   {% for cat in cat_list %}
+                                       <option value="{% url 'news:category' cat.name|slugify%}">{{ cat.name }}</option>
+                                   {% endfor %}
+                              </select>
 
-                                   </select>
-
-                          </div> {% endcomment %}
+                         </div> {% endcomment %}
                          {% if user.is_authenticated %}
                           <div class="col-md-2 col-sm-12">
                               <form action = "{% url 'news:add'%}">
@@ -124,12 +120,6 @@
                               </form>
                          </div>
                          {% endif %}
-
-                         
-
-
-                         
-                          
 
                     
 
