@@ -52,7 +52,9 @@
   
 
 <div class="receipts">
+  {% if tax_receipts %}
   <h2>Tax Receipts</h2>
+  {% endif %}
 
 
 {% comment %} All Tax Details {% endcomment %} 
@@ -102,6 +104,11 @@
 
 
 <div class="container">
+  <form action="{% url 'accounts:user_csv' %}">
+    <button type="submit" class="btn btn-primary" style="margin-bottom:20px;">
+      Download User Data
+    </button>
+  </form>
   <table class="table table-dark" style="text-align: left">
     <thead>
       <tr>
