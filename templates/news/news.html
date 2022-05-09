@@ -92,7 +92,8 @@
               <div class="media blog-thumb">
                       <div class="media-body blog-info">
                         <p style="color:black;margin-top: -50px;"></i><i class="fa fa-bookmark"></i></p>
-                        {% if user.is_superuser %}
+                         {% if user.is_superuser %}
+                        
                           {% if news.pinned %}
                           <a href="{% url 'news:unpin_post' news.pk %}"> <i  class='fa fa-bookmark'></i></a>
 
