@@ -45,7 +45,7 @@
 
 .container-fluid
 {
-    background-color: #010449
+    background-color: #4c4c51
 }
 .msg-form
 {
@@ -73,6 +73,10 @@
 #bordering a:active
 {
     border:1px solid #0080ff;
+}
+.team
+{
+    margin-top: 100px;
 }
 @media(min-width:568px)
 {
