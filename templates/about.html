@@ -47,8 +47,8 @@
   <div class="container py-5">
     <div class="row align-items-center mb-5">
       <div class="col-lg-6 order-2 order-lg-1"><i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
-        <h2 class="font-weight-light">About the organization</h2>
-        <p class="font-italic  mb-4">A tax is a compulsory financial charge or some other type of levy imposed on a taxpayer by a governmental organization in order to fund government spending and various public expenditures, and tax compliance refers to policy actions and individual behaviour aimed at ensuring that taxpayers are paying the right amount of tax at the right time and securing the correct tax allowances and tax reliefs. The first known taxation took place in Ancient Egypt around 3000–2800 BC. A failure to pay in a timely manner, along with evasion of or resistance to taxation, is punishable by law. Taxes consist of direct or indirect taxes and may be paid in money or as its labour equivalent. Most countries have a tax system in place, in order to pay for public, common, or agreed national needs and for the functions of government. Some levy a flat percentage rate of taxation on personal annual income, but most scale taxes are progressive based on brackets of annual income amounts. </p>
+        <h2 style="color:white">About the organization</h2>
+        <p style="color:white">A tax is a compulsory financial charge or some other type of levy imposed on a taxpayer by a governmental organization in order to fund government spending and various public expenditures, and tax compliance refers to policy actions and individual behaviour aimed at ensuring that taxpayers are paying the right amount of tax at the right time and securing the correct tax allowances and tax reliefs. The first known taxation took place in Ancient Egypt around 3000–2800 BC. A failure to pay in a timely manner, along with evasion of or resistance to taxation, is punishable by law. Taxes consist of direct or indirect taxes and may be paid in money or as its labour equivalent. Most countries have a tax system in place, in order to pay for public, common, or agreed national needs and for the functions of government. Some levy a flat percentage rate of taxation on personal annual income, but most scale taxes are progressive based on brackets of annual income amounts. </p>
       </div>
       <img src="{% static 'images/illustration.png' %}" style="width: 550px; height: 550px;">
     </div>
@@ -58,7 +58,7 @@
         <div class="row py-5">
         <div class="col-lg-4">
           <figure class="rounded p-3 bg-white shadow-sm">
-            <img src="https://i.postimg.cc/CxckQJW1/6.png" alt="" class="w-100 card-img-top">
+            <img src="{% static 'images/about1.jpg' %}" style="width: 350px; height: 350px;">
             <figcaption class="p-4 card-img-bottom">
               <h2 class="h5 font-weight-bold mb-2 font-italic" style="color:white;" >Tax Calculation</h2>
               <p class="mb-0 text-small  font-italic"></p>
@@ -67,7 +67,8 @@
         </div>
         <div class="col-lg-4">
           <figure class="rounded p-3 bg-white shadow-sm">
-            <img src="https://i.postimg.cc/BbvGMSDt/6.png" alt="" class="w-100 card-img-top">
+            <img src="{% static 'images/about3.jpg' %}" style="width: 350px; height: 350px;">
+            <figcaption class="p-4 card-img-bottom">>
             <figcaption class="p-4 card-img-bottom">
               <h2 class="h5 font-weight-bold mb-2 font-italic" style="color:white;" >News Features</h2>
               <p class="mb-0 text-small  font-italic"></p>
@@ -76,7 +77,8 @@
         </div>
         <div class="col-lg-4">
           <figure class="rounded p-3 bg-white shadow-sm">
-            <img src="https://i.postimg.cc/W3bKP94H/6.png" alt="" class="w-100 card-img-top">
+            <img src="{% static 'images/about2.jpg' %}" alt="" style="width: 350px; height: 350px;">
+            <figcaption class="p-4 card-img-bottom">>
             <figcaption class="p-4 card-img-bottom">
               <h2 class="h5 font-weight-bold mb-2 font-italic" style="color:white;">Many more</h2>
               <p class="mb-0 text-small  font-italic"></p>
@@ -89,86 +91,82 @@
       <div class="separator my-3"></div>
 
 
-        <h2 class="display-4 font-weight-light">Our team</h2>
-        <p class="font-italic ">Group formed for the task 'Tax Calculator System'</p>
+        <h2 class="team"style="margin-top:100px">Our team</h2>
       </div>
     </div>
 
     <div class="row text-center">
-      <!-- Team item-->
+      
       <div class="col-xl-3 col-sm-6 mb-5">
         <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-4.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-          <h5 class="mb-0"style="color:white;">Kristina Regmi</h5><span class="small text-uppercase text-muted">Project Manager</span>
+          <h5 class="mb-0"style="color:white;">Kristina Regmi</h5><span class="small text-uppercase"style="color:white;">Project Manager</span>
           <ul class="social mb-0 list-inline mt-3">
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.facebook.com/krishtina.regmi.7" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+            
           </ul>
         </div>
       </div>
-      <!-- End-->
+      
 
-      <!-- Team item-->
+      
       <div class="col-xl-3 col-sm-6 mb-5">
         <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-          <h5 class="mb-0" style="color:white;">Anamika Karki</h5><span class="small text-uppercase text-muted">Business Analyst</span>
+          <h5 class="mb-0" style="color:white;">Anamika Karki</h5><span class="small text-uppercase "style="color:white;">Business Analyst</span>
           <ul class="social mb-0 list-inline mt-3">
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.facebook.com/anamika.karki.3538" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+         
           </ul>
         </div>
       </div>
-      <!-- End-->
+      
 
-      <!-- Team item-->
+      
       <div class="col-xl-3 col-sm-6 mb-5">
         <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-2.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-          <h5 class="mb-0" style="color:white;">Sugam Karki</h5><span class="small text-uppercase ">Backend Developer</span>
+          <h5 class="mb-0" style="color:white;">Sugam Karki</h5><span class="small text-uppercase "style="color:white;">Backend Developer</span>
           <ul class="social mb-0 list-inline mt-3">
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.facebook.com/sugaamkaarki" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+           
           </ul>
         </div>
       </div>
-      <!-- End-->
+      
 
-      <!-- Team item-->
+      
       <div class="col-xl-3 col-sm-6 mb-5">
         <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-1.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-          <h5 class="mb-0"style="color:white;">Milan Roka</h5><span class="small text-uppercase ">Front-end Developer</span>
+          <h5 class="mb-0"style="color:white;">Milan Roka</h5><span class="small text-uppercase "style="color:white;">Front-end Developer</span>
           <ul class="social mb-0 list-inline mt-3">
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+            
           </ul>
         </div>
       </div>
-      <!-- End-->
+      
 
-      <!-- Team item-->
+      
       <div class="col-xl-3 col-sm-6 mb-5">
         <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-1.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-          <h5 class="mb-0"style="color:white;">Rajan Kumar Adhikari</h5><span class="small text-uppercase ">Frontend Developer</span>
+          <h5 class="mb-0"style="color:white;">Rajan Kumar Adhikari</h5><span class="small text-uppercase "style="color:white;">Frontend Developer</span>
           <ul class="social mb-0 list-inline mt-3">
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
             <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+            
           </ul>
         </div>
       </div>
-      <!-- End-->
+      
 
 
     </div>
   </div>
 </div>
+
+<h2>Contact Us</h2>
 
 <div class="container-fluid rounded">
     <div class="row px-5">
@@ -194,8 +192,8 @@
         </div>
         <div class="col-sm-6">
                 <div>
-                <h2 class="display-4 font-weight-light">Contact Information</h2>
-                <p class="text-secondary">Fill up the form on the left and our Team will get back to you within in 24 hours</p>
+                <h2 class="display-4 ">Contact Information</h2>
+                <p style="color:white">Group formed for the task 'Tax Calculator System'.Fill up the form on the left and our Team will get back to you within in 24 hours</p>
             </div>
             <div class="links" id="bordering"> <a href="#" class="btn rounded text-white p-3"><i class="fa fa-phone icon text-primary pr-3"></i>+0123 4567 8910</a> <a href="#" class="btn rounded text-white p-3"><i class="fa fa-envelope icon text-primary pr-3"></i>hello@flowbase.com</a> <a href="#" class="btn rounded text-white p-3"><i class="fa fa-map-marker icon text-primary pr-3"></i>102 street 2714 Don</a> </div>
             
