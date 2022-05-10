@@ -12,6 +12,7 @@ from verify_email.email_handler import send_verification_email
 from tax.models import TaxReceipt
 
 from django.views.decorators.csrf import csrf_exempt
+from home.models import Feedback
 
 
 def login_view(request):
@@ -73,7 +74,8 @@ def profile_view(request):
     user = request.user
     tax_receipts = TaxReceipt.objects.filter(user=user)
     users = User.objects.all()
-    return render(request, 'templates/accounts/account.html', {'user': user, 'tax_receipts': tax_receipts, 'users': users})
+    feedbacks = Feedback.objects.all()
+    return render(request, 'templates/accounts/account.html', {'user': user, 'tax_receipts': tax_receipts, 'users': users, 'feedbacks':feedbacks})
 
 
 def logout_view(request):

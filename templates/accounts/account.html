@@ -143,9 +143,40 @@
       {% endfor %}
     </tbody>
   </table>
-
 </div>
 
+  <div class="user">
+    <h2>Messages</h2>
+  </div>
+  <div class="container">
+<table class="table table-dark" style="text-align: left">
+  <thead>
+    <tr>
+      <th scope="col">S.N </th>
+      <th scope="col">Full Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Message</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for feedback in feedbacks %}
+    <tr>
+      <th scope="row">{{ feedback.pk }}</th>
+      <td>{{ feedback.name }}</td>
+      <td>{{ feedback.email }}</td>
+      <td>{{ feedback.message }}</td>
+      <td>{{ feedback.date }}</td>
+      
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+  {% for feedback in feedbacks %}
+
+    
+  {% endfor %}
 {% endif %} 
 {% endblock content %} 
 
