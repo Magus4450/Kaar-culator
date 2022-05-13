@@ -129,7 +129,11 @@ function addErrorHandling(input, error, errorMessage) {
       monthsInput.value > 0 &&
       citizenInvestmentTrustInput.value > 0 &&
       bonusInput.value > 0 &&
-      insuranceInput.value > 0
+      insuranceInput.value > 0 &&
+      insuranceInput.value < 25000 &&
+      employeeProvidentFundInput.value > monthlySalInput.value * 0.2 &&
+      (employeeProvidentFundInput.value+citizenInvestmentTrustInput.value) > min(300000,.33*(12*monthlySalInput.value))
+
     ) {
       button.disabled = false;
       error.innerHTML = "";
@@ -160,14 +164,48 @@ addErrorHandling(
   "Insurance cannot be negative"
 );
 
-// monthlySalInput.addEventListener('change', () =>{
-//     if(monthlySalInput.value == ''){
-//         button.disabled = true;
-//     } else if(monthlySalInput.value < 0){
-//         button.disabled = true;
-//         monthylSalError.innerHTML = 'Monthly salary cannot be negative';
-//     } else {
-//         button.disabled = false;
-//         monthylSalError.innerHTML = '';
-//     }
-// })
+insuranceInput.addEventListener('change', () => {
+  if (parseInt(insuranceInput.value) > 25000) {
+    button.disabled = true;
+    insuranceError.innerHTML = "Insurance cannot be more than 25000";
+  }else {
+    button.disabled = false;
+    insuranceError.innerHTML = "";
+  }
+});
+
+// epf must be smaller than 20% of salary
+ employeeProvidentFundInput.addEventListener('change', () => {
+   if (parseInt(employeeProvidentFundInput.value) > monthlySalInput.value * 0.2) {
+     button.disabled = true;
+     employeeProvidentFundError.innerHTML = "Employee Provident Fund cannot be more than 20% of salary";
+   }
+  // epf + cit must be lower than 300,000 or 33% of total salary which ever is lower
+
+    else if ((parseInt(employeeProvidentFundInput.value) + parseInt(citizenInvestmentTrustInput.value)) > min(300000,.33*(12*monthlySalInput.value))) {
+      button.disabled = true;
+      employeeProvidentFundError.innerHTML = "Employee Provident Fund + Citizen Investment Trust cannot be more than 300,000 or 33% of total salary";
+      citizenInvestmentTrustError.innerHTML = "Employee Provident Fund + Citizen Investment Trust cannot be more than 300,000 or 33% of total salary";
+    }else {
+      button.disabled = false;
+      employeeProvidentFundError.innerHTML = "";
+      citizenInvestmentTrustError.innerHTML = "";
+    }
+ })
+// epf + cit must be lower than 300,000 or 33% of total salary which ever is lower
+citizenInvestmentTrustInput.addEventListener('change', () => {
+  if ((parseInt(employeeProvidentFundInput.value) + parseInt(citizenInvestmentTrustInput.value)) > min(300000,.33*(12*monthlySalInput.value))) {
+    button.disabled = true;
+    employeeProvidentFundError.innerHTML = "Employee Provident Fund + Citizen Investment Trust cannot be more than 300,000 or 33% of total salary";
+    citizenInvestmentTrustError.innerHTML = "Employee Provident Fund + Citizen Investment Trust cannot be more than 300,000 or 33% of total salary";
+  }else{
+    button.disabled = false;
+    employeeProvidentFundError.innerHTML = "";
+    citizenInvestmentTrustError.innerHTML = "";
+  }
+})
+
+
+
+
+ 

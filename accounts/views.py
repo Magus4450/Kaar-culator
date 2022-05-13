@@ -69,6 +69,10 @@ def register_view(request):
     return render(request, 'templates/accounts/register.html', {'form': form})
 
 
+def logout_view(request):
+    logout(request)
+    return redirect(reverse_lazy('home:home'))
+
 @login_required(login_url=reverse_lazy('accounts:login'))
 def profile_view(request):
     user = request.user
@@ -78,17 +82,11 @@ def profile_view(request):
     return render(request, 'templates/accounts/account.html', {'user': user, 'tax_receipts': tax_receipts, 'users': users, 'feedbacks':feedbacks})
 
 
-def logout_view(request):
-    logout(request)
-    return redirect(reverse_lazy('home:home'))
-
-
 def deactivate_view(request, pk):
     user = User.objects.get(pk=pk)
     user.is_active = False
     user.save()
     return redirect(reverse_lazy('accounts:account'))
-
 
 def activate_view(request, pk):
     user = User.objects.get(pk=pk)
@@ -96,21 +94,13 @@ def activate_view(request, pk):
     user.save()
     return redirect(reverse_lazy('accounts:account'))
 
-
 def user_csv(request):
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attactment; filename: users.csv'
-
-    # create a csv writer
     writer = csv.writer(response)
-    # configure model
-
     users = User.objects.all()
-
     writer.writerow(['First Name', 'Last Name', 'Email', 'Account Status', 'User Type', 'Date Joined'])
-
     for user in users:
         writer.writerow([user.first_name,
                         user.last_name, user.email, "Enabled" if user.is_active else "Disabled","Admin" if user.is_superuser else "User", user.date_joined])
-
     return response
